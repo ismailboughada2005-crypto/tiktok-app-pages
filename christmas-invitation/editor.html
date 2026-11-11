@@ -110,7 +110,7 @@ kbd{background:#fff;border:1px solid #cfc4b0;border-bottom-width:2px;border-radi
 <header class="top"><div class="top-in">
   <h1>🎄 Make your invitation</h1>
   <p>Fill in the boxes, watch your invitation change, then press the red download button. No code, no account, and nothing leaves your computer.</p>
-  <ol class="steps"><li><b>1</b>Fill in your details</li><li><b>2</b>Download</li><li><b>3</b>Drag onto Netlify Drop</li><li><b>4</b>Share your link</li></ol>
+  <ol class="steps"><li><b>1</b>Fill in your details</li><li><b>2</b>Download</li><li><b>3</b>Publish with Canva</li><li><b>4</b>Share your link</li></ol>
 </div></header>
 
 <div class="wrap">
@@ -237,16 +237,16 @@ kbd{background:#fff;border:1px solid #cfc4b0;border-bottom-width:2px;border-radi
   <button type="button" class="btn alt sm" id="pvAuto" hidden>Back to the automatic picture</button>
   <div class="f" style="margin-top:14px"><label for="sTitle">Preview title (optional)</label><input id="sTitle" type="text" data-k="share.title" maxlength="70"></div>
   <div class="f"><label for="sDesc">Preview text (optional)</label><input id="sDesc" type="text" data-k="share.description" maxlength="150"><p class="hint">Leave both empty and we write them from your details.</p></div>
-  <div class="f"><label for="sUrl">Your invitation link (add it after publishing)</label><input id="sUrl" type="url" data-k="share.url" placeholder="https://your-name.netlify.app"><p class="hint">Messaging apps only show the picture when they know your full link. After you publish (see “How to publish” below), paste your link here, download again and drag the new folder onto Netlify once more.</p></div>
+  <div class="f"><label for="sUrl">Your invitation link (add it after publishing)</label><input id="sUrl" type="url" data-k="share.url" placeholder="https://your-name.netlify.app"><p class="hint">Only needed for the Netlify zip: messaging apps show the picture once they know your full link. The title and text work everywhere.</p></div>
 </div></details>
 
 <div class="dl" id="download">
   <h2>⬇️ Download</h2>
-  <p style="margin:.2em 0 .6em">You get a small zip folder with your finished invitation (<b>index.html</b>) and your link preview picture (<b>preview.jpg</b>).</p>
+  <p style="margin:.2em 0 .6em">You get one file, <b>index.html</b>: your finished invitation, ready to put online with Canva (see “How to publish &amp; share” below).</p>
   <ul class="warn" id="warn"></ul>
-  <button type="button" class="btn big" id="dlZip">Download my invitation</button>
+  <button type="button" class="btn big" id="dlHtml">Download my invitation</button>
   <div class="tools">
-    <button type="button" class="btn alt sm" id="dlHtml">Download only index.html</button>
+    <button type="button" class="btn alt sm" id="dlZip">Download zip folder (for Netlify)</button>
     <button type="button" class="btn alt sm" id="saveDraft">💾 Save draft</button>
     <button type="button" class="btn alt sm" id="loadDraft">Load draft</button>
     <button type="button" class="btn alt sm" id="exportDraft">Export draft file</button>
@@ -257,29 +257,30 @@ kbd{background:#fff;border:1px solid #cfc4b0;border-bottom-width:2px;border-radi
 </div>
 
 <details class="sec" id="guestTool"><summary><span class="n">✉</span><span>Personal links for each guest<small>“Dear Sarah” on the envelope</small></span></summary><div class="body">
-  <div class="f"><label for="gBase">Your invitation link</label><input id="gBase" type="url" placeholder="https://your-name.netlify.app"><p class="hint">Publish first, then paste the link Netlify gives you.</p></div>
+  <div class="f"><label for="gBase">Your invitation link</label><input id="gBase" type="url" placeholder="Paste your Canva link here"><p class="hint">Publish first, then paste the link Canva gives you.</p></div>
   <div class="f"><label for="gNames">Guest names, one per line</label><textarea id="gNames" placeholder="Sarah&#10;The Smith Family&#10;Grandma Rose"></textarea></div>
   <div class="tools" style="margin-top:0"><button type="button" class="btn sm" id="gMake">Make the links</button><button type="button" class="btn alt sm" id="gCopyAll" hidden>Copy all</button></div>
   <div class="links" id="gOut" aria-live="polite"></div>
 </div></details>
 
-<details class="sec how" id="how" open><summary><span class="n">?</span><span>How to publish &amp; share<small>About 5 minutes, free</small></span></summary><div class="body">
+<details class="sec how" id="how" open><summary><span class="n">?</span><span>How to publish &amp; share<small>About 5 minutes, with a free Canva account</small></span></summary><div class="body">
   <h3>1. Download</h3>
-  <ol><li>Press <b>Download my invitation</b>. A file called <b>my-invitation.zip</b> lands in your Downloads folder.</li>
-  <li>Open it: on a Mac double-click it; on Windows right-click → <b>Extract All</b>. You now have a folder named <b>my-invitation</b>.</li></ol>
-  <h3>2. Put it online with Netlify Drop (free)</h3>
-  <ol><li>Go to <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">app.netlify.com/drop</a>.</li>
-  <li>Drag the <b>my-invitation</b> folder onto the page and wait a few seconds.</li>
-  <li>Netlify shows your link, something like <code>https://jolly-elf-12345.netlify.app</code>. Create the free account when it asks, so your invitation stays online.</li>
-  <li>Optional: in Netlify, <b>Site configuration → Change site name</b> to get a nicer link such as <code>hartwell-christmas.netlify.app</code>.</li></ol>
-  <h3>3. Turn on the picture in link previews</h3>
-  <ol><li>Copy your link, paste it in <b>Link preview → Your invitation link</b> above, and download again.</li>
-  <li>In Netlify open your site → <b>Deploys</b>, and drag the new folder onto the box at the bottom of the page.</li></ol>
-  <h3>4. Share</h3>
+  <ol><li>Press <b>Download my invitation</b>. A file called <b>index.html</b> lands in your Downloads folder.</li></ol>
+  <h3>2. Put it online with Canva</h3>
+  <ol><li>Go to <a href="https://www.canva.com" target="_blank" rel="noopener">canva.com</a> and sign in (a free account is fine).</li>
+  <li>Drag <b>index.html</b> from your Downloads folder onto the Canva home page. It opens as a new design showing your invitation.</li>
+  <li>Click <b>Share</b> at the top right, then publish it as a website.</li>
+  <li>Canva gives you your link. Copy it.</li>
+  <li>Open the link on your phone and tap through the envelope once to check everything looks right.</li></ol>
+  <h3>3. Share</h3>
   <ol><li>Paste your link in WhatsApp, a text message or an email.</li>
-  <li>For a personal touch use <b>Personal links for each guest</b> above: each guest sees their own name on the envelope.</li></ol>
+  <li>For a personal touch use <b>Personal links for each guest</b> above: each guest sees their own name on the envelope. Test one personal link on your phone before sending them all.</li></ol>
   <h3>Need to change something later?</h3>
-  <p>Come back to this page (your draft is remembered), edit, download, and drag the new folder onto <b>Deploys</b> in Netlify. Your link stays the same.</p>
+  <p>Come back to this page (your draft is remembered), edit, and download again. Then drag the new <b>index.html</b> into Canva and publish it the same way. Send the new link if it changes.</p>
+  <h3>Prefer Netlify instead?</h3>
+  <ol><li>Press <b>Download zip folder (for Netlify)</b> and unzip it (Mac: double-click; Windows: right-click → <b>Extract All</b>).</li>
+  <li>Go to <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">app.netlify.com/drop</a>, drag the <b>my-invitation</b> folder onto the page, and create the free account when asked so it stays online.</li>
+  <li>For the picture in link previews: paste your Netlify link in <b>Link preview → Your invitation link</b>, download the zip again, and drag the new folder onto <b>Deploys</b> in Netlify.</li></ol>
 </div></details>
 </form>
 
@@ -474,7 +475,7 @@ function dl(blob,name){const u=URL.createObjectURL(blob),a=document.createElemen
 $("#dlZip").addEventListener("click",async()=>{if(!customPreview)await drawPreview();
   dl(zip([{name:"index.html",data:new TextEncoder().encode(build())},{name:"preview.jpg",data:dataBytes(customPreview||autoPreview)}]),"my-invitation.zip");save();
   toast("Downloaded! Next: unzip it and drag the folder onto Netlify Drop.");$("#how").open=true});
-$("#dlHtml").addEventListener("click",()=>{dl(new Blob([build()],{type:"text/html"}),"index.html");toast("index.html downloaded ✓")});
+$("#dlHtml").addEventListener("click",()=>{dl(new Blob([build()],{type:"text/html"}),"index.html");save();toast("Downloaded! Next: drag index.html into Canva.");$("#how").open=true});
 
 /* ───── drafts ───── */
 const pack=()=>({v:1,cfg:cfg,customPreview:customPreview,guestNames:$("#gNames").value,guestBase:$("#gBase").value});
