@@ -9,13 +9,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Christmas Party · The Hartwell Family">
 <meta property="og:description" content="You're invited! Saturday, December 19, 2026 at 6:30 PM. Tap to open your invitation.">
-<meta property="og:image" content="preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Christmas Party · The Hartwell Family">
 <meta name="twitter:description" content="You're invited! Saturday, December 19, 2026 at 6:30 PM. Tap to open your invitation.">
-<meta name="twitter:image" content="preview.jpg">
 <meta name="theme-color" content="#0f3526">
 <!--META:END-->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%8E%84%3C/text%3E%3C/svg%3E">
@@ -465,9 +461,9 @@ const CONFIG = {
   hosts: "The Hartwell Family",
   hostsNames: "Eleanor, James, Lily & Theo",
 
-  // Guest greeting, used with personal links:  yoursite.com/?guest=The+Smith+Family
+  // Envelope greeting: "Dear" + the name everyone sees, e.g. "Friends & Family"
   greeting: "Dear",
-  defaultGuest: "",                 // name shown when the link has no ?guest= (empty = "You're Invited")
+  defaultGuest: "",                 // empty = the envelope says "You're Invited"
 
   // Photo: a base64 image (the editor does this for you) or an image link. Empty = festive illustration.
   photo: "",
@@ -554,7 +550,7 @@ const CONFIG = {
   },
 
   // Link preview (what WhatsApp / iMessage show). Empty = made automatically.
-  share: { title: "", description: "", image: "preview.jpg", url: "" }
+  share: { title: "", description: "", image: "", url: "" }
 };
 /*==CONFIG:END==*/
 
@@ -582,6 +578,7 @@ const ev=()=>EVENTS[C.eventType]||EVENTS["Christmas Party"];
 const theme=()=>{const t=(params.get("theme")||"").toLowerCase();return THEMES.includes(t)?t:(THEMES.includes(C.theme)?C.theme:"classic")};
 const title=()=>C.title||ev().title;
 const on=k=>!C.sections||C.sections[k]!==false;
+const urlGuest=()=>String(params.get("guest")||params.get("to")||(PREVIEW&&PREVIEW.guest)||"").replace(/[<>]/g,"").replace(/\s+/g," ").trim().slice(0,60);
 const guest=()=>{let g=(params.get("guest")||params.get("to")||(PREVIEW&&PREVIEW.guest)||C.defaultGuest||"").replace(/[<>]/g,"").replace(/\s+/g," ").trim();return g.slice(0,60)};
 
 /* ───────── dates ───────── */
@@ -686,7 +683,7 @@ function buttons(){
 }
 function rsvp(){
   if(!on("rsvp"))return"";
-  const r=C.rsvp||{},g=guest(),max=Math.max(1,Math.min(20,parseInt(r.maxGuests,10)||6));
+  const r=C.rsvp||{},g=urlGuest(),max=Math.max(1,Math.min(20,parseInt(r.maxGuests,10)||6));
   const note=r.deadline?`<p class="rsvp-note">Kindly reply by ${esc(r.deadline)}</p>`:"";
   let body;
   if(r.method==="link"){

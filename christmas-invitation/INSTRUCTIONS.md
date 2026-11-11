@@ -1,6 +1,6 @@
 # Your Christmas Invitation: step by step
 
-No coding needed. You fill in a form, download your invitation, and put it online with a free Canva account. It takes about 10 minutes.
+No coding needed. You fill in a form, download your invitation, and put it online with Canva. It takes about 10 minutes.
 
 **What is in your download**
 
@@ -8,7 +8,6 @@ No coding needed. You fill in a form, download your invitation, and put it onlin
 | --- | --- |
 | `editor.html` | The editor. **Start here.** |
 | `index.html` | The invitation itself, with sample details (the editor makes your own copy) |
-| `preview.jpg` | Sample picture for link previews (only used with Netlify) |
 | `INSTRUCTIONS.md` | This guide |
 
 ---
@@ -27,7 +26,8 @@ Work down the numbered boxes on the left. Your invitation updates in the phone p
 - **Your photo**: press **Choose a photo**. It is resized for you.
 - **RSVP**: choose where replies go: your WhatsApp, your email, or your own form link (for example a Google Form).
 - Every optional section (menu, schedule, Secret Santa and so on) has a **Show** switch. Turn off what you do not need.
-- Above the preview, **Envelope** shows the opening animation and **As "Sarah"** shows how a personal link looks.
+- In **Wording & hosts**, **Name on the envelope** is the name every guest sees, for example "Friends & Family". Leave it empty to show "You're Invited".
+- Above the preview, **Envelope** shows the opening animation.
 
 Your work saves itself in the browser. **Save draft** keeps a copy you can return to with **Load draft**. **Export draft file** makes a backup file you can **Import** later or on another computer.
 
@@ -37,7 +37,7 @@ Press the red **Download my invitation** button. A file called **`index.html`** 
 
 ## Step 4: Put it online with Canva
 
-1. Go to **https://www.canva.com** and sign in. A free account is fine.
+1. Go to **https://www.canva.com** and sign in (or create an account).
 2. Drag **`index.html`** from your Downloads folder onto the Canva home page. It opens as a new design showing your invitation.
 3. Click **Share** at the top right, then publish it as a website.
 4. Canva gives you your link. Copy it.
@@ -49,47 +49,11 @@ Paste your link into WhatsApp, a text message, an email or anywhere else. Guests
 
 ---
 
-## Personal links for each guest
-
-Each guest can see their own name on the envelope ("Dear Sarah").
-
-**The easy way**
-
-1. In the editor open **Personal links for each guest**.
-2. Paste your invitation link.
-3. Type your guest names, one per line.
-4. Press **Make the links**, then **Copy** next to each name and send that link to that guest.
-
-**By hand**
-
-Add `?guest=` and the name to the end of your link. Use `+` where there is a space.
-
-```
-https://your-invitation-link/?guest=Sarah
-https://your-invitation-link/?guest=The+Smith+Family
-```
-
-The name also fills in the RSVP form for the guest. **Open one personal link on your phone before sending them all**, to check the name appears.
-
----
-
 ## Changing something later
 
 1. Open `editor.html` again. Your draft is remembered.
 2. Make your changes and press **Download my invitation** again.
 3. Drag the new `index.html` into Canva and publish it the same way. If the link changes, send guests the new one.
-
----
-
-## Prefer Netlify instead of Canva?
-
-Netlify is another free way to put the invitation online. It also shows your preview picture when the link is shared.
-
-1. In the editor press **Download zip folder (for Netlify)**.
-2. Open the zip: on a Mac double-click it; on Windows right-click it, choose **Extract All**, then **Extract**. You now have a folder called **`my-invitation`**.
-3. Go to **https://app.netlify.com/drop** and drag the **`my-invitation` folder** onto the page.
-4. Netlify shows your link, like `https://jolly-elf-12345.netlify.app`. **Create the free account when Netlify asks**, so your invitation stays online.
-5. For the preview picture: paste your Netlify link into **12 · Link preview → Your invitation link** in the editor, download the zip again, unzip it, then in Netlify open your site → **Deploys** and drag the new folder onto the box at the bottom.
 
 ---
 
@@ -103,12 +67,6 @@ Yes. In **11 · Music & sounds** choose **My own MP3 link** and paste a link tha
 
 **The countdown shows the wrong time.**
 The invitation shows the date and time exactly as you typed them, on every guest's phone.
-
-**Handy extras for your link**
-
-- `?preview=card` skips the envelope and goes straight to the invitation.
-- `?theme=classic`, `?theme=elegant` or `?theme=cozy` shows another look without changing your file.
-- Combine them with `&`, for example `?guest=Sarah&theme=elegant`.
 
 **I am comfortable with code. Can I edit the file directly?**
 Yes. Open `index.html` in a text editor. All your details are in the `CONFIG` block near the bottom of the file, with a note on every line.

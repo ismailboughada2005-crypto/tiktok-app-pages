@@ -29,7 +29,7 @@ Spare tags to swap in later: rsvp invitation, secret santa invite, invitation we
 Invite your guests to an animated Christmas party invitation they open like a real envelope. Edit it in minutes with no code, then share one link by WhatsApp, text or email.
 
 ✨ WHAT YOUR GUESTS SEE
-• A sealed envelope with their own name and a wax seal. One tap breaks the seal and the card slides out
+• A sealed envelope with a wax seal, addressed with the name of your choice (like "Friends & Family"). One tap breaks the seal and the card slides out
 • Gentle snowfall and twinkling string lights
 • A live countdown to your party
 • Date, time and address, with one-tap Google Maps directions
@@ -47,9 +47,6 @@ Each theme changes the colours, fonts, envelope, seal and decorations.
 
 🎄 FOR ANY HOLIDAY GATHERING
 The wording adapts automatically for: Christmas Party, Christmas Dinner, Christmas Eve, Holiday Party, Office Holiday Party and Ugly Sweater Party. You can also write your own text.
-
-💌 PERSONAL LINKS FOR EACH GUEST
-Paste your guest list and get one link per guest. Each guest sees "Dear Sarah" or "Dear The Smith Family" on the envelope, and their name is already filled in on the RSVP form.
 
 📩 RSVPS STRAIGHT TO YOUR PHONE
 Choose how replies reach you:
@@ -76,7 +73,7 @@ Open the editor in your browser and fill in a simple form. The invitation update
 ⚠️ PLEASE NOTE
 • This is a digital download. No physical item will be shipped.
 • Use a computer (laptop or desktop) to edit. Guests can open the invitation on any phone or computer.
-• You need a Canva account to publish your invitation. Another free option is also explained in the guide.
+• You need a Canva account to publish your invitation.
 • RSVPs arrive by WhatsApp, email or your own form. There is no guest list dashboard.
 • For personal use. Please do not resell or share the files.
 • I created this invitation and its editor with the help of AI tools.
