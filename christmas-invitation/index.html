@@ -909,7 +909,7 @@ setInterval(tick,1000);
 // live preview hook used by editor.html
 if(PREVIEW)addEventListener("message",e=>{const m=e.data||{};
   if(m.type==="invite:update"&&m.config){C=m.config;if(musicOn)setMusic(false);mp3=null;render()}
-  if(m.type==="invite:scroll"){const el=document.getElementById(m.id);if(el&&!page.hidden)el.scrollIntoView({behavior:"smooth",block:"start"})}});
+  if(m.type==="invite:scroll"){const el=document.getElementById(m.id);if(el&&!page.hidden)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-12,behavior:reduced?"auto":"smooth"})}});
 
 /* ───────── go ───────── */
 if(PREVIEW)document.documentElement.classList.add("in-editor");
