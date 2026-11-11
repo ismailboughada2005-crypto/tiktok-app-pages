@@ -79,6 +79,7 @@ Open the editor in your browser and fill in a simple form. The invitation update
 • You need a Canva account to publish your invitation. Another free option is also explained in the guide.
 • RSVPs arrive by WhatsApp, email or your own form. There is no guest list dashboard.
 • For personal use. Please do not resell or share the files.
+• I created this invitation and its editor with the help of AI tools.
 • Because this is a digital product, returns are not accepted. If anything is unclear, send me a message and I'll gladly help.
 
 Merry Christmas and happy hosting! 🎁
