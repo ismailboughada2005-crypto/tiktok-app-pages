@@ -1,12 +1,10 @@
 # Etsy listing text: Animated Christmas Party Invitation
 
-## Title (128 / 140 characters)
+## Title (104 / 140 characters, 13 words, no repeated words)
 
-Animated Christmas Party Invitation, Editable Digital Evite, Envelope Opening Text Invite, Holiday Party RSVP Invitation Website
+Animated Christmas Party Invitation, Editable Digital Evite, Envelope Opening, Holiday Text Message RSVP
 
-Shorter option (69 characters), closer to Etsy's advice to keep titles short and readable:
-
-Animated Christmas Party Invitation, Editable Digital Evite with RSVP
+Follows Etsy's tips: 14 words or fewer, no repeated words. "Invite", "website" and the event types are covered by the tags.
 
 ## Tags (13, each 20 characters or fewer)
 
