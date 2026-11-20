@@ -405,7 +405,6 @@ html[data-kind="fun"] .sign{font-weight:700;font-size:2rem}
 .seal{left:0;top:0;width:100%;height:100%;aspect-ratio:auto;transform:none;z-index:3}
 .seal svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 10px 14px rgba(0,0,0,.14))}
 .seal g{transform-box:fill-box;transform-origin:50% 50%;transition:transform .9s cubic-bezier(.45,0,.2,1),opacity .7s ease}
-.env.open .seal svg{filter:none}
 .env.open .env-letter{opacity:1;transform:none;transition-delay:1.25s,1.25s}
 /* cloud: halves part, the moon rises */
 html[data-theme="cloud"] .env.open .o-a{transform:translateX(-62%);opacity:0;transition-delay:.1s,.45s}
@@ -521,6 +520,7 @@ h2.sec.thanks{font-size:2.8rem}
 .count b,.dblock b,.vname,.dblock{font-variant-numeric:lining-nums}
 .card{box-shadow:0 26px 60px -26px rgba(70,50,40,.38),0 2px 0 rgba(255,255,255,.5) inset}
 #page{overflow-x:clip}
+.env.open .seal svg{filter:drop-shadow(0 10px 14px rgba(0,0,0,.14))}
 @media(min-width:700px){
   #page{padding:96px 24px 90px}
   .card{padding:46px 56px 50px}
