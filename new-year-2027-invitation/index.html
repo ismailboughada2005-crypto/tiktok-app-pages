@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="gold">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--META:START-->
+<title>Happy New Year 2027 · Sarah & James</title>
+<meta name="description" content="You're invited to our New Year's Eve Party! Thursday, December 31, 2026 at 9:00 PM. Tap to open your invitation.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Happy New Year 2027 · Sarah & James">
+<meta property="og:description" content="You're invited to our New Year's Eve Party! Thursday, December 31, 2026 at 9:00 PM. Tap to open your invitation.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Happy New Year 2027 · Sarah & James">
+<meta name="twitter:description" content="You're invited to our New Year's Eve Party! Thursday, December 31, 2026 at 9:00 PM. Tap to open your invitation.">
+<meta name="theme-color" content="#0B0B0F">
+<!--META:END-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E%F0%9F%A5%82%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+/* ───────────────────────── THEME: black & gold ───────────────────────── */
+:root{
+  --f-title:"Playfair Display",Georgia,serif;      /* elegant serif for titles */
+  --f-caps:"Cinzel","Trajan Pro",Georgia,serif;     /* small capitals for labels */
+  --f-body:"Jost","Helvetica Neue",Arial,sans-serif;/* clean sans-serif for details */
+  --body-size:1.06rem; --label-space:.26em;
+  --black:#0B0B0F; --gold:#D4AF37; --gold-l:#F5E6B8; --gold-d:#9c7c22; --white:#FFFFFF;
+  --foil:linear-gradient(180deg,#FFF6D6 0%,#F5E6B8 22%,#D4AF37 55%,#B08A26 78%,#E9CF7A 100%);
+  --bg:#0B0B0F; --bg-art:radial-gradient(120% 80% at 50% 0%,#221d10 0%,#0B0B0F 55%,#050507 100%);
+  --paper:#111116; --paper-art:radial-gradient(90% 45% at 50% 0%,rgba(212,175,55,.12) 0%,transparent 70%),linear-gradient(#131318,#0d0d11);
+  --ink:#FFFFFF; --ink-soft:#d9d0b8; --title:#D4AF37; --label:#D4AF37;
+  --accent:#D4AF37; --accent-ink:#0B0B0F; --accent2:#F5E6B8; --line:rgba(212,175,55,.45);
+  --field:#18181f; --panel:rgba(212,175,55,.06);
+  --env:#1b1b22; --env2:#0B0B0F; --env-flap:#23232c;
+  --liner-art:radial-gradient(circle at 50% 50%,rgba(245,230,184,.95) 0 1px,transparent 1.5px) 0 0/12px 12px,radial-gradient(circle at 50% 50%,rgba(212,175,55,.8) 0 1.4px,transparent 1.9px) 6px 6px/12px 12px,linear-gradient(135deg,#17140b,#0B0B0F);
+  --seal1:#EBCB6B; --seal2:#9c7c22; --seal-ink:#3b2c07; --name:#F5E6B8; --env-label:#D4AF37;
+  --hint:#F5E6B8; --radius:6px; --focus:#F5E6B8;
+}
+
+/* ───────────────────────── BASE ───────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;min-height:100vh;min-height:100dvh;background:var(--bg);color:var(--ink);
+  font-family:var(--f-body);font-size:var(--body-size);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background:var(--bg-art);z-index:-1}
+body.locked{overflow:hidden}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+svg{display:block}
+.foil{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+#snow{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:80;overflow:hidden}
+.spark{position:absolute;width:14px;height:14px;will-change:transform,opacity;
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.spark.dot{clip-path:none;border-radius:50%;width:6px;height:6px}
+.spark.conf{clip-path:none;border-radius:1px;width:7px;height:12px}
+.spark.fw{clip-path:none;border-radius:50%;width:5px;height:5px;box-shadow:0 0 8px 2px currentColor}
+
+/* hanging stars garland (replaces the Christmas string lights) */
+.lights{position:absolute;top:0;left:0;width:100%;height:84px;pointer-events:none;z-index:3;overflow:hidden}
+.lights svg{width:100%;height:84px}
+.lights .wire{fill:none;stroke:var(--gold);stroke-width:1.2;opacity:.6}
+.lights .str{stroke:var(--gold);stroke-width:.8;opacity:.55}
+.bulb{animation:twinkle 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 0}
+.bulb:nth-child(4n+1){animation-delay:-.4s;animation-duration:3.1s}
+.bulb:nth-child(4n+2){animation-delay:-1.3s}
+.bulb:nth-child(4n+3){animation-delay:-2s;animation-duration:3.6s}
+.bulb:nth-child(5n){animation-delay:-.9s;animation-duration:2.2s}
+.bulb .glow{opacity:.22}
+.c1{fill:#F5E6B8}.c2{fill:#D4AF37}.c3{fill:#fff4cf}.c4{fill:#E9CF7A}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* ───────────────────────── ENVELOPE SCREEN ───────────────────────── */
+#envelope-screen{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:clamp(18px,4vh,36px);padding:90px 16px 40px;background:var(--bg-art),var(--bg);transition:opacity .7s ease,visibility 0s .7s}
+#envelope-screen.done{opacity:0;visibility:hidden;pointer-events:none}
+#envelope-screen[hidden]{display:none}
+.env-from{font-family:var(--f-caps);letter-spacing:var(--label-space);text-transform:uppercase;font-size:.74rem;color:var(--hint);text-align:center;margin:0;opacity:.95}
+.env-from b{display:block;font-weight:600;font-family:var(--f-title);font-style:italic;font-size:2rem;letter-spacing:0;text-transform:none;margin-top:.15em;line-height:1.15}
+.env-btn{all:unset;display:block;cursor:pointer;-webkit-tap-highlight-color:transparent;border-radius:10px;margin-top:clamp(40px,11vh,110px)}
+.env-btn:focus-visible{outline:3px solid var(--focus);outline-offset:10px}
+.env{position:relative;width:min(88vw,430px);aspect-ratio:1.42;perspective:1400px;container-type:inline-size;
+  animation:float 5s ease-in-out infinite;transition:transform .8s cubic-bezier(.5,0,.3,1)}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-.6deg)}50%{transform:translateY(-8px) rotate(.6deg)}}
+.env-shadow{position:absolute;left:6%;right:6%;bottom:-9%;height:10%;background:radial-gradient(closest-side,rgba(212,175,55,.18),transparent);z-index:0}
+.env-back{position:absolute;inset:0;background:var(--env2);border-radius:7px;z-index:1;box-shadow:inset 0 0 0 1.5px var(--gold),0 20px 50px -20px rgba(0,0,0,.9)}
+.env-inside{position:absolute;inset:0;z-index:1;border-radius:7px;background:var(--liner-art);clip-path:polygon(0 0,100% 0,100% 60%,0 60%);opacity:.96}
+.env-letter{position:absolute;left:6%;right:6%;top:7%;height:86%;z-index:2;background:var(--paper-art),var(--paper);border-radius:4px;
+  box-shadow:0 2px 10px rgba(0,0,0,.5);transition:transform .85s cubic-bezier(.3,.8,.3,1);display:flex;flex-direction:column;align-items:center;
+  padding-top:8%;text-align:center;color:var(--ink);overflow:hidden}
+.env-letter::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);border-radius:2px}
+.env-letter small{font-family:var(--f-caps);letter-spacing:var(--label-space);text-transform:uppercase;font-size:11px;font-size:2.7cqw;color:var(--label)}
+.env-letter span{font-family:var(--f-title);font-style:italic;font-weight:600;font-size:28px;font-size:7.6cqw;line-height:1.1;margin-top:.2em;padding:0 8%}
+.env-front{position:absolute;inset:0;z-index:3;border-radius:7px;
+  background:linear-gradient(115deg,transparent 49.7%,rgba(212,175,55,.7) 50%,transparent 50.6%) 0 0/50% 100% no-repeat,
+             linear-gradient(-115deg,transparent 49.7%,rgba(212,175,55,.7) 50%,transparent 50.6%) 100% 0/50% 100% no-repeat,
+             linear-gradient(var(--env),var(--env2));
+  clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%)}
+.env-flap{position:absolute;inset:0;z-index:4;transform-origin:50% 0;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.45,.05,.25,1),z-index 0s .38s}
+.env-flap>i{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 60%);backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:7px}
+.flap-out{background:linear-gradient(var(--env-flap),var(--env))}
+.flap-out::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.35))}
+.flap-out svg{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.flap-in{background:var(--liner-art);transform:rotateX(180deg)}
+.env-address{position:absolute;left:0;right:0;top:74%;z-index:4;text-align:center;color:var(--name);padding:0 9%;transition:opacity .4s}
+.env-address small{display:block;font-family:var(--f-caps);letter-spacing:var(--label-space);text-transform:uppercase;font-size:10px;font-size:2.6cqw;color:var(--env-label)}
+.env-address span{display:block;font-family:var(--f-title);font-style:italic;font-weight:500;font-size:26px;font-size:7.6cqw;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:.1em 0}
+.env-address span.long{font-size:5.8cqw}
+/* gold wax seal with the year */
+.seal{position:absolute;left:50%;top:57%;width:21%;aspect-ratio:1;z-index:6;transform:translate(-50%,-50%)}
+.seal-half{position:absolute;inset:0;transition:transform .55s cubic-bezier(.3,.6,.3,1),opacity .5s .12s}
+.seal-half.l{clip-path:polygon(-20% -20%,52% -20%,44% 22%,56% 40%,45% 60%,55% 80%,49% 120%,-20% 120%)}
+.seal-half.r{clip-path:polygon(52% -20%,120% -20%,120% 120%,49% 120%,55% 80%,45% 60%,56% 40%,44% 22%)}
+.wax{position:absolute;inset:0;border-radius:47% 53% 50% 50%/52% 47% 53% 48%;
+  background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.55),transparent 30%),radial-gradient(circle at 50% 50%,var(--seal1) 0 58%,var(--seal2) 100%);
+  box-shadow:0 3px 9px rgba(0,0,0,.6),inset 0 -3px 6px rgba(0,0,0,.25)}
+.wax::before{content:"";position:absolute;inset:13%;border-radius:50%;box-shadow:inset 0 2px 3px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.3);background:radial-gradient(circle,var(--seal1),var(--seal2) 130%)}
+.wax b{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--f-caps);font-weight:700;color:var(--seal-ink);
+  font-size:4.1cqw;letter-spacing:.02em;line-height:1;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+.wax b svg{width:3.2cqw;height:3.2cqw;margin-bottom:.15em}
+.env.open .seal-half.l{transform:translate(-42%,26%) rotate(-24deg);opacity:0}
+.env.open .seal-half.r{transform:translate(42%,26%) rotate(24deg);opacity:0}
+.env.open{animation:none}
+.env.open .env-flap{transform:rotateX(180deg);z-index:1;transition-delay:.3s,.68s}
+.env.open .env-letter{transform:translateY(-58%);transition-delay:.95s}
+.env.open .env-address{opacity:.0}
+.env.away{transform:translateY(26vh) scale(.9)}
+.tap-hint{font-family:var(--f-caps);letter-spacing:var(--label-space);text-transform:uppercase;font-size:.8rem;color:var(--hint);margin:0;
+  animation:pulse 2s ease-in-out infinite;transition:opacity .3s}
+@keyframes pulse{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+#envelope-screen.opening .tap-hint,#envelope-screen.opening .env-from{opacity:0;animation:none}
+
+/* ───────── 3 · 2 · 1 countdown overlay (after the envelope opens) ───────── */
+#nye-count{position:fixed;inset:0;z-index:75;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,rgba(11,11,15,.55),rgba(11,11,15,.92));
+  opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s .35s;pointer-events:none}
+#nye-count.on{opacity:1;visibility:visible;transition:opacity .35s ease}
+#nye-count span{display:block;font-family:var(--f-title);font-weight:700;line-height:1;font-size:min(46vmin,280px);text-align:center;
+  background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(212,175,55,.35))}
+#nye-count span.msg{font-size:min(13vmin,84px);font-style:italic;padding:0 16px}
+#nye-count span.go{animation:tick .62s cubic-bezier(.2,.8,.3,1) both}
+@keyframes tick{0%{transform:scale(.4);opacity:0}35%{transform:scale(1.06);opacity:1}75%{transform:scale(1);opacity:1}100%{transform:scale(1.25);opacity:0}}
+#nye-count span.msg.go{animation:hny 1.1s cubic-bezier(.2,.8,.3,1) both}
+@keyframes hny{0%{transform:scale(.7);opacity:0}30%{transform:scale(1);opacity:1}80%{opacity:1}100%{transform:scale(1.04);opacity:0}}
+
+/* ───────────────────────── CARD ───────────────────────── */
+#page{position:relative;padding:84px 12px 56px;opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+#page.in{opacity:1;transform:none}
+#page[hidden]{display:none}
+.card{position:relative;z-index:2;max-width:600px;margin:0 auto;background:var(--paper-art),var(--paper);border-radius:var(--radius);border:1px solid var(--line);
+  box-shadow:0 30px 70px -20px rgba(0,0,0,.8),0 0 60px -20px rgba(212,175,55,.25);padding:34px 24px 34px;text-align:center}
+.card::before{content:"";position:absolute;inset:9px;border:1px solid var(--line);border-radius:calc(var(--radius) - 3px);pointer-events:none}
+.card::after{content:"";position:absolute;inset:13px;border:1px solid var(--line);opacity:.45;border-radius:calc(var(--radius) - 5px);pointer-events:none}
+.corner{position:absolute;width:74px;height:74px;color:var(--gold);pointer-events:none;z-index:1}
+.corner.tl{top:4px;left:4px}.corner.tr{top:4px;right:4px;transform:scaleX(-1)}
+.corner.bl{bottom:4px;left:4px;transform:scaleY(-1)}.corner.br{bottom:4px;right:4px;transform:scale(-1)}
+section{position:relative;padding:8px 0}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+html.in-editor .rv{opacity:1;transform:none;transition:none}
+.divider{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px auto;color:var(--gold);max-width:340px}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
+.divider::after{transform:scaleX(-1)}
+.divider svg{width:64px;height:28px;flex:none}
+.label{font-family:var(--f-caps);text-transform:uppercase;letter-spacing:var(--label-space);font-size:.72rem;font-weight:500;color:var(--label);margin:0}
+h2.sec{font-family:var(--f-title);font-style:italic;font-weight:600;font-size:2.3rem;line-height:1.15;margin:.15em 0 .55em;color:var(--gold-l)}
+p{margin:.4em 0}
+
+/* hero */
+.ornament{all:unset;cursor:pointer;display:block;width:64px;margin:-34px auto 8px;position:relative;transform-origin:50% 0;animation:swing 4.5s ease-in-out infinite;-webkit-tap-highlight-color:transparent}
+.ornament:focus-visible{outline:3px solid var(--focus);outline-offset:4px;border-radius:12px}
+.ornament svg{width:64px;height:104px;overflow:visible}
+.ornament.pop svg{animation:pop .5s ease}
+@keyframes swing{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes pop{40%{transform:scale(1.22)}}
+.dear{font-family:var(--f-title);font-style:italic;font-size:1.6rem;color:var(--gold-l);margin:0 0 .3em;line-height:1.2}
+h1.title{font-family:var(--f-title);font-style:italic;font-weight:600;margin:.1em 0 .05em;line-height:1.05;font-size:clamp(2.5rem,11.5vw,3.6rem);text-wrap:balance;
+  background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1.title .yr{display:block;font-family:var(--f-caps);font-style:normal;font-weight:700;font-size:1.9em;letter-spacing:.04em;line-height:1;margin-top:.04em;filter:drop-shadow(0 4px 18px rgba(212,175,55,.3))}
+h1.title.long{font-size:clamp(2.1rem,9.5vw,3rem)}
+.intro{max-width:24em;margin:.6em auto 0;font-size:1.12rem;color:var(--white);font-weight:300;letter-spacing:.01em}
+.hosts{font-family:var(--f-title);font-size:1.45rem;font-weight:500;margin:.1em 0 0;line-height:1.2;color:var(--white)}
+.hosts-sub{font-style:italic;color:var(--ink-soft);margin:.1em 0 0}
+.date-line{display:inline-flex;gap:.7em;align-items:center;margin-top:1.1em;padding:.5em 1.1em;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  font-family:var(--f-caps);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;font-weight:500;color:var(--gold-l)}
+.date-line i{width:4px;height:4px;border-radius:50%;background:var(--gold);flex:none}
+.frame{position:relative;width:min(74%,300px);margin:26px auto 8px}
+.frame-in{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:999px 999px 8px 8px;border:1px solid var(--gold);
+  box-shadow:0 0 0 7px var(--paper),0 0 0 8px var(--line),0 0 40px rgba(212,175,55,.2);background:#0d0d14}
+.frame-in img,.frame-in svg{width:100%;height:100%;object-fit:cover;display:block}
+.frame .sprig{position:absolute;width:46px;height:46px;left:50%;bottom:-23px;transform:translateX(-50%);z-index:2;color:var(--gold)}
+
+/* countdown */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:400px;margin:10px auto 0}
+.count div{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px 2px 9px}
+.count b{display:block;font-family:var(--f-title);font-size:2.1rem;line-height:1;font-weight:600;font-variant-numeric:tabular-nums;
+  background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+.count span{display:block;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;margin-top:6px;color:var(--ink-soft);font-family:var(--f-caps)}
+.count-msg{font-family:var(--f-title);font-style:italic;font-size:2rem;color:var(--gold-l);line-height:1.2;margin:.2em 0}
+
+/* details */
+.details{display:grid;gap:12px;text-align:left;max-width:440px;margin:0 auto}
+.detail{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+.ico{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:none;border:1px solid var(--gold);color:var(--gold)}
+.ico svg{width:21px;height:21px}
+.detail .label{font-size:.66rem}
+.detail strong{display:block;font-family:var(--f-title);font-size:1.25rem;font-weight:600;line-height:1.25;color:var(--white)}
+.detail p{margin:.1em 0 0;color:var(--ink-soft);line-height:1.35}
+.dots{display:flex;gap:7px;margin-top:8px;flex-wrap:wrap}
+.dots i{width:24px;height:24px;border-radius:50%;border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line),0 2px 4px rgba(0,0,0,.4)}
+.badge{display:inline-flex;align-items:center;gap:.4em;margin-top:9px;padding:.32em .9em;background:var(--accent);color:var(--accent-ink);border-radius:30px;
+  font-family:var(--f-caps);font-weight:600;font-size:.74rem;letter-spacing:.1em;transform:rotate(-2deg);box-shadow:0 3px 12px rgba(212,175,55,.3)}
+
+/* timeline */
+.timeline{list-style:none;margin:0 auto;padding:0;max-width:400px;text-align:left;position:relative}
+.timeline::before{content:"";position:absolute;left:99px;top:10px;bottom:10px;width:1px;background:var(--line)}
+.timeline li{display:grid;grid-template-columns:86px 27px 1fr;align-items:start;padding:8px 0}
+.timeline time{font-family:var(--f-caps);font-weight:500;color:var(--gold);text-align:right;font-size:.86rem;letter-spacing:.04em;white-space:nowrap;padding-top:.15em}
+.timeline li>i{width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);margin:.42em auto 0;position:relative;z-index:1}
+.timeline li:first-child>i,.timeline li.mid>i{background:var(--gold);box-shadow:0 0 10px rgba(212,175,55,.8)}
+.timeline strong{font-family:var(--f-title);font-weight:600;font-size:1.12rem;display:block;line-height:1.3;color:var(--white)}
+.timeline span{color:var(--ink-soft);display:block;line-height:1.3;font-size:.94em}
+
+/* menu */
+.menu{max-width:420px;margin:0 auto}
+.menu h3{font-family:var(--f-caps);font-size:.72rem;letter-spacing:var(--label-space);text-transform:uppercase;color:var(--gold);margin:1.1em 0 .25em;font-weight:500}
+.menu p{font-family:var(--f-title);font-style:italic;font-size:1.08em;margin:.1em 0;line-height:1.4;color:var(--white)}
+
+/* midnight toast (replaces the Christmas gift exchange) */
+.gift{max-width:440px;margin:0 auto;padding:22px 18px 18px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);position:relative}
+.gift-ico{width:58px;height:58px;margin:-50px auto 6px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold)}
+.gift-ico svg{width:32px;height:32px}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 12px}
+.chip{padding:.3em .9em;border:1px solid var(--line);border-radius:30px;background:var(--paper);font-size:.92em;line-height:1.3;color:var(--ink-soft)}
+.chip b{font-family:var(--f-caps);font-weight:600;color:var(--gold-l);letter-spacing:.04em}
+.rules{list-style:none;margin:0;padding:0;text-align:left}
+.rules li{position:relative;padding:.25em 0 .25em 1.5em;line-height:1.4}
+.rules li::before{content:"✦";position:absolute;left:.15em;color:var(--gold);font-size:.8em;top:.5em}
+
+/* buttons */
+.btns{display:grid;gap:10px;max-width:440px;margin:0 auto}
+.btn{appearance:none;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);border-radius:40px;padding:.9em 1.3em;
+  font-family:var(--f-caps);font-weight:600;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;display:inline-flex;gap:.6em;align-items:center;justify-content:center;
+  min-height:50px;transition:transform .2s ease,box-shadow .2s ease,background .2s;box-shadow:0 8px 24px -10px rgba(212,175,55,.55);text-align:center;line-height:1.2}
+.btn.gold{background:var(--foil);border-color:#E9CF7A}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:transparent;color:var(--gold-l);border-color:var(--line);box-shadow:none}
+.btn svg{width:18px;height:18px;flex:none}
+.cal-menu{display:grid;gap:8px;grid-template-columns:1fr 1fr}
+.cal-menu[hidden]{display:none}
+.cal-menu .btn{font-size:.7rem;padding:.6em .5em;min-height:46px;letter-spacing:.12em}
+@media(min-width:560px){.btns{grid-template-columns:1fr 1fr}.cal-menu{grid-column:1/-1}}
+
+/* rsvp */
+.rsvp{max-width:440px;margin:0 auto;text-align:left}
+.rsvp-note{text-align:center;color:var(--ink-soft);margin:-.3em 0 1em}
+.rsvp-how{text-align:center;color:var(--ink-soft);font-size:.86rem;margin:.6em 0 0}
+.fld{margin:0 0 14px;border:0;padding:0;min-width:0}
+.fld>label,.fld>legend{display:block;font-family:var(--f-caps);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--label);margin-bottom:6px;padding:0}
+.fld input[type=text],.fld textarea{width:100%;background:var(--field);border:1px solid var(--line);border-radius:var(--radius);padding:.65em .85em;font-size:1rem;line-height:1.35;color:var(--white)}
+.fld input::placeholder,.fld textarea::placeholder{color:rgba(217,208,184,.55)}
+.fld textarea{min-height:74px;resize:vertical}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--focus);outline-offset:1px;border-color:var(--accent)}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{position:relative;display:block}
+.choice input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.choice span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:72px;padding:.5em;text-align:center;border:1px solid var(--line);
+  border-radius:var(--radius);background:var(--field);font-family:var(--f-body);font-weight:500;font-size:.98rem;line-height:1.2;transition:background .2s,color .2s,transform .2s}
+.choice em{font-style:normal;font-size:1.3rem;line-height:1}
+.choice input:checked+span{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:scale(1.02)}
+.choice input:focus-visible+span{outline:3px solid var(--focus);outline-offset:3px}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:40px;background:var(--field);overflow:hidden}
+.stepper button{all:unset;cursor:pointer;width:48px;height:46px;display:grid;place-items:center;font-size:1.5rem;font-family:Georgia,serif;color:var(--gold)}
+.stepper button:focus-visible{outline:3px solid var(--focus);outline-offset:-3px;border-radius:40px}
+.stepper output{min-width:2.2em;text-align:center;font-family:var(--f-title);font-weight:600;font-size:1.3rem}
+.rsvp .btn{width:100%;margin-top:4px}
+.rsvp-err{color:#ffb4a8;font-weight:500;text-align:center;min-height:1.4em;margin:.3em 0}
+.rsvp-done{text-align:center;padding:10px 0}
+.rsvp-done svg{width:86px;height:86px;margin:0 auto 6px;color:var(--gold)}
+.rsvp-done circle{stroke-dasharray:240;stroke-dashoffset:240;animation:draw .8s ease forwards}
+.rsvp-done path{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .5s .6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.rsvp-done h3{font-family:var(--f-title);font-style:italic;font-weight:600;font-size:2.1rem;color:var(--gold-l);margin:.1em 0;line-height:1.15}
+.linkbtn{all:unset;cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:var(--ink-soft);font-size:.95em;margin-top:.6em;display:inline-block;padding:.3em}
+.linkbtn:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
+
+/* footer */
+.closing{max-width:25em;margin:0 auto;font-family:var(--f-title);font-style:italic;font-size:1.12em;color:var(--white)}
+.sign{font-family:var(--f-title);font-style:italic;font-weight:600;font-size:1.9rem;margin:.4em 0 0;line-height:1.2;background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+.foot-art{width:150px;height:60px;margin:14px auto 0;color:var(--gold)}
+
+/* music */
+#music{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:70;width:50px;height:50px;border-radius:50%;border:1px solid var(--line);
+  background:var(--black);color:var(--gold);display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.8),0 0 0 1px rgba(212,175,55,.2);padding:0;transition:transform .2s}
+#music[hidden]{display:none}
+#music:hover{transform:scale(1.06)}
+#music svg{width:22px;height:22px}
+#music .off-line{opacity:1;transition:opacity .2s}
+#music[aria-pressed="true"] .off-line{opacity:0}
+#music[aria-pressed="true"]{animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.08)}}
+
+@media(min-width:700px){
+  #page{padding:104px 24px 90px}
+  .card{padding:50px 56px 50px}
+  .card::before{inset:12px}.card::after{inset:17px}
+  h2.sec{font-size:2.7rem}
+  .divider{margin:32px auto}
+  .lights,.lights svg{height:96px}
+}
+@media(max-width:350px){.card{padding-left:18px;padding-right:18px}.timeline li{grid-template-columns:74px 25px 1fr}.timeline::before{left:86px}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body class="locked">
+<canvas id="snow" aria-hidden="true"></canvas>
+<div id="fx" aria-hidden="true"></div>
+
+<div id="envelope-screen">
+  <div class="lights" aria-hidden="true"></div>
+  <p class="env-from" id="env-from"></p>
+  <button class="env-btn" id="env-btn" type="button" aria-label="Open your invitation">
+    <div class="env" id="env">
+      <div class="env-shadow"></div>
+      <div class="env-back"></div>
+      <div class="env-inside"></div>
+      <div class="env-letter"><small id="env-letter-small"></small><span id="env-letter-title" class="foil"></span></div>
+      <div class="env-front"></div>
+      <div class="env-flap"><i class="flap-out"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,0 50,60 100,0" fill="none" stroke="#D4AF37" stroke-width="2.2" vector-effect="non-scaling-stroke"/></svg></i><i class="flap-in"></i></div>
+      <div class="env-address"><small id="env-dear"></small><span id="env-name"></span></div>
+      <div class="seal" id="seal"></div>
+    </div>
+  </button>
+  <p class="tap-hint" aria-hidden="true">Tap to open</p>
+</div>
+
+<div id="nye-count" aria-live="assertive"><span></span></div>
+
+<div id="page" hidden>
+  <div class="lights" aria-hidden="true"></div>
+  <main class="card" id="card"></main>
+</div>
+
+<button id="music" type="button" aria-pressed="false" aria-label="Play background music" hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/><path class="off-line" d="M3 3l18 18"/></svg>
+</button>
+<noscript><p style="color:#fff;text-align:center;padding:40px">Please enable JavaScript to open your invitation.</p></noscript>
+
+<script>
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  YOUR NEW YEAR'S EVE INVITATION SETTINGS                             ║
+   ║  Easiest way to change these: open editor.html (no code needed).     ║
+   ║  Everything the invitation shows comes from this one CONFIG block.   ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+/*==CONFIG:START==*/
+const CONFIG = {
+  // Look & feel: "gold" (black & gold)
+  theme: "gold",
+
+  // "New Year's Eve Party", "New Year's Eve Dinner", "Countdown Party", "Office New Year Party",
+  // "Masquerade Ball" or "New Year's Day Brunch" (sets the default wording)
+  eventType: "New Year's Eve Party",
+
+  // Wording. Leave title or intro empty ("") to use the default for the event type.
+  title: "Happy New Year 2027",
+  intro: "You're invited to our New Year's Eve Party",   // subtitle under the title
+  hostsLabel: "Hosted by",
+  hosts: "Sarah & James",
+  hostsNames: "",
+
+  // Envelope greeting: "Dear" + the name everyone sees, e.g. "Friends & Family"
+  greeting: "Dear",
+  defaultGuest: "",                 // empty = the envelope says "You're Invited"
+
+  // Photo: a base64 image (the editor does this for you) or an image link. Empty = New Year illustration.
+  photo: "",
+  photoAlt: "Sarah and James",
+
+  // When (the guest's phone shows it in their local time format)
+  date: "2026-12-31",               // YYYY-MM-DD  → Thursday, December 31, 2026
+  startTime: "21:00",               // 24h HH:MM   → 9:00 PM
+  endTime: "",                      // 24h HH:MM, or "" for no end time
+  timeNote: "until late",           // shown after the start time when there is no end time
+  locale: "en-US",                  // date language, e.g. "en-GB", "fr-FR", "es-ES"
+
+  // Where
+  venue: "",
+  address: "123 Main Street, New York",
+  mapsLink: "",                     // optional: your own Google Maps link (empty = made from the address)
+
+  // Dress code
+  dressCode: {
+    text: "Black & Gold Glam",
+    note: "Sequins, velvet & a touch of sparkle",
+    palette: ["#0B0B0F", "#D4AF37", "#F5E6B8", "#FFFFFF"],   // colour dots, [] for none
+    badge: "✨ Sparkle encouraged"   // small gold badge, "" for none
+  },
+
+  // Evening schedule
+  schedule: [
+    { time: "9:00 PM", title: "Doors open", note: "Welcome cocktails & canapés" },
+    { time: "10:00 PM", title: "Dinner & bubbles", note: "" },
+    { time: "11:00 PM", title: "Dance floor opens", note: "DJ until late" },
+    { time: "11:59 PM", title: "Countdown & champagne toast", note: "Grab a glass!" },
+    { time: "12:00 AM", title: "Happy New Year!", note: "Fireworks & the first dance of 2027" }
+  ],
+
+  // Menu (each course can list several dishes, one per line)
+  menu: [
+    { course: "Bites", dishes: "Smoked salmon blinis\nTruffle arancini\nMini beef sliders" },
+    { course: "Dinner", dishes: "Roast beef tenderloin with red wine jus\nWild mushroom risotto" },
+    { course: "Sweet", dishes: "Gold-dusted chocolate tart\nChampagne macarons" },
+    { course: "To Sip", dishes: "Champagne · Golden hour cocktail · Sparkling mocktails" }
+  ],
+
+  // The midnight toast
+  midnight: {
+    title: "The Midnight Toast",
+    intro: "At the stroke of midnight we'll raise a glass to 2027 together.",
+    chip1Label: "Champagne toast", chip1: "11:59 PM",
+    chip2Label: "Fireworks", chip2: "Midnight",
+    notes: [
+      "Write a wish for 2027 on a card at the door.",
+      "We'll read the best resolutions after the toast.",
+      "Party poppers & noisemakers provided!"
+    ]
+  },
+
+  // RSVP: how replies reach you
+  rsvp: {
+    method: "whatsapp",             // "whatsapp", "email" or "link"
+    whatsapp: "+1 212 555 0127",    // your WhatsApp number with country code
+    email: "sarah.james@example.com",
+    link: "",                       // e.g. your Google Form link (used when method is "link")
+    deadline: "December 20",        // shown as "Kindly reply by ..."  (empty to hide)
+    maxGuests: 6,
+    buttonText: "RSVP Now"          // text on the RSVP button
+  },
+
+  // Closing message
+  closing: {
+    message: "Let's say goodbye to 2026 and welcome 2027 together, with friends, laughter and plenty of sparkle.",
+    signature: "Cheers! Sarah & James"
+  },
+
+  // Music & sounds (music never starts on its own; guests tap the ♪ button)
+  music: {
+    enabled: true,
+    source: "musicbox",             // "musicbox" (built-in, royalty-free) or "mp3"
+    track: "auld-lang-syne",        // built-in melody: "auld-lang-syne"
+    // ▼▼▼ NEW YEAR TRACK PLACEHOLDER ▼▼▼
+    // Paste a link to your own festive New Year MP3 here, then set source: "mp3" above.
+    // Only use music you have the right to use.
+    mp3Url: ""
+    // ▲▲▲ NEW YEAR TRACK PLACEHOLDER ▲▲▲
+  },
+  sounds: { paper: true, chime: true },   // envelope opening sounds
+  introCountdown: true,                   // "3… 2… 1…" + fireworks after the envelope opens
+
+  // Turn sections on (true) or off (false)
+  sections: {
+    photo: true, countdown: true, details: true, dressCode: true, schedule: true, menu: true,
+    midnight: true, directions: true, calendar: true, rsvp: true, footer: true
+  },
+
+  // Link preview (what WhatsApp / iMessage show). Empty = made automatically.
+  share: { title: "", description: "", image: "", url: "" }
+};
+/*==CONFIG:END==*/
+
+/* ═════════════ Nothing below needs editing ═════════════ */
+(function(){
+"use strict";
+const $=(s,r)=>(r||document).querySelector(s), $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nl=s=>esc(s).replace(/\n/g,"<br>");
+const reduced=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+const params=new URLSearchParams(location.search);
+const PREVIEW=window.__INVITE_PREVIEW__||null;      // set by editor.html for its live preview
+let C=CONFIG;
+
+/* the new year being welcomed: a party on Dec 31, 2026 welcomes 2027 */
+const newYear=()=>{const m=/^(\d{4})-(\d{2})/.exec(C.date||"");if(!m)return new Date().getFullYear()+1;return +m[1]+(+m[2]>=7?1:0)};
+const EVENTS={
+  "New Year's Eve Party":{title:"Happy New Year {Y}",intro:"You're invited to our New Year's Eve Party",today:"The party is tonight! 🥂",until:"Until the party begins"},
+  "New Year's Eve Dinner":{title:"Happy New Year {Y}",intro:"Join us for a New Year's Eve dinner",today:"Dinner is tonight! 🥂",until:"Until dinner is served"},
+  "Countdown Party":{title:"Countdown to {Y}",intro:"Count down to midnight with us",today:"The countdown is tonight! 🥂",until:"Until the countdown begins"},
+  "Office New Year Party":{title:"Cheers to {Y}",intro:"The team is celebrating! You're invited to our New Year party",today:"The party is tonight! 🥂",until:"Until the party begins"},
+  "Masquerade Ball":{title:"Masquerade {Y}",intro:"You're invited to a New Year's Eve masquerade ball",today:"The ball is tonight! 🎭",until:"Until the masks go on"},
+  "New Year's Day Brunch":{title:"Hello {Y}",intro:"Start the year with us at a New Year's Day brunch",today:"Brunch is today! 🥂",until:"Until brunch is served"}
+};
+const THEMES=["gold"];
+const ev=()=>EVENTS[C.eventType]||EVENTS["New Year's Eve Party"];
+const theme=()=>{const t=(params.get("theme")||"").toLowerCase();return THEMES.includes(t)?t:(THEMES.includes(C.theme)?C.theme:"gold")};
+const title=()=>C.title||ev().title.replace("{Y}",newYear());
+const intro=()=>C.intro||ev().intro;
+const on=k=>!C.sections||C.sections[k]!==false;
+const urlGuest=()=>String(params.get("guest")||params.get("to")||(PREVIEW&&PREVIEW.guest)||"").replace(/[<>]/g,"").replace(/\s+/g," ").trim().slice(0,60);
+const guest=()=>{let g=(params.get("guest")||params.get("to")||(PREVIEW&&PREVIEW.guest)||C.defaultGuest||"").replace(/[<>]/g,"").replace(/\s+/g," ").trim();return g.slice(0,60)};
+
+/* ───────── dates ───────── */
+function parseDT(d,t){const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||"");if(!m)return null;const tm=/^(\d{1,2}):(\d{2})/.exec(t||"")||[0,0,0];
+  return new Date(+m[1],+m[2]-1,+m[3],+tm[1],+tm[2],0)}
+const startDT=()=>parseDT(C.date,C.startTime||"00:00");
+function endDT(){const s=startDT();if(!s)return null;if(!C.endTime)return new Date(s.getTime()+5*3600e3);const e=parseDT(C.date,C.endTime);if(e<=s)e.setDate(e.getDate()+1);return e}
+const loc=()=>C.locale||"en-US";
+function fmt(d,o){try{return d.toLocaleString(loc(),o)}catch(e){return d.toLocaleString("en-US",o)}}
+const longDate=()=>{const s=startDT();return s?fmt(s,{weekday:"long",month:"long",day:"numeric",year:"numeric"}):""};
+const timeOf=d=>fmt(d,{hour:"numeric",minute:"2-digit"});
+const timeRange=()=>{const s=startDT();if(!s||!C.startTime)return"";return timeOf(s)+(C.endTime?" – "+timeOf(endDT()):(C.timeNote?" "+C.timeNote:""))};
+const p2=n=>String(n).padStart(2,"0");
+const stamp=d=>d.getFullYear()+p2(d.getMonth()+1)+p2(d.getDate())+"T"+p2(d.getHours())+p2(d.getMinutes())+"00";
+
+/* ───────── SVG art (gold sparkles, stars, champagne, clock) ───────── */
+const A={
+  star8:`<svg viewBox="0 0 44 44" aria-hidden="true"><path fill="currentColor" d="M22 0l2.6 16.2L36 8l-8.2 11.4L44 22l-16.2 2.6L36 36l-11.4-8.2L22 44l-2.6-16.2L8 36l8.2-11.4L0 22l16.2-2.6L8 8l11.4 8.2z"/></svg>`,
+  divStar:`<svg viewBox="0 0 64 28" aria-hidden="true"><path fill="currentColor" d="M32 2l2.2 9.8L44 14l-9.8 2.2L32 26l-2.2-9.8L20 14l9.8-2.2z"/><path fill="currentColor" d="M14 9l.9 3.6 3.6.9-3.6.9L14 18l-.9-3.6-3.6-.9 3.6-.9zM50 9l.9 3.6 3.6.9-3.6.9L50 18l-.9-3.6-3.6-.9 3.6-.9z" opacity=".7"/></svg>`,
+  sealStar:`<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1.5l3.1 6.7 7.3.9-5.4 5 1.4 7.2L12 17.7l-6.4 3.6L7 14.1l-5.4-5 7.3-.9z"/></svg>`,
+  corner:`<svg viewBox="0 0 74 74" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1"><path d="M22 6h46M6 22v46M22 6a16 16 0 0 1-16 16M30 12h28M12 30v28"/><path d="M14 14l3 5 5 3-5 3-3 5-3-5-5-3 5-3z" fill="currentColor" stroke="none" transform="translate(4 4) scale(.8)"/></svg>`,
+  cal:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>`,
+  pin:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 1 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>`,
+  shirt:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5L3 6.5l2 4 2-1V20h10V9.5l2 1 2-4-5.5-3a3.5 3.5 0 0 1-7 0z"/></svg>`,
+  glasses:`<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h7l-.6 8.5a2.9 2.9 0 0 1-5.8 0zM10.5 15v11M7 27h7M18.4 6.5l6.8-1.6 1.3 8.4a2.9 2.9 0 0 1-5.6 1.4zM23.4 17l2.5 10.7M21 28.3l6.8-1.6"/><path d="M16 2.5v2M13.5 3.5l1 1.3M18.5 3.5l-1 1.3" opacity=".8"/></svg>`,
+  nav:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></svg>`,
+  send:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l16-8-6 16-3-6z"/></svg>`
+};
+// hanging gold clock (the tappable "ornament"): hands at 11:59
+const CLOCK=`<svg viewBox="0 0 64 104" aria-hidden="true"><defs><radialGradient id="ck" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".45" stop-color="#D4AF37"/><stop offset="1" stop-color="#8a6a18"/></radialGradient></defs>
+ <path d="M32 0v34" stroke="#D4AF37" stroke-width="1.2"/><rect x="27" y="31" width="10" height="7" rx="2" fill="url(#ck)"/>
+ <circle cx="32" cy="68" r="28" fill="url(#ck)"/><circle cx="32" cy="68" r="22.5" fill="#0B0B0F"/><circle cx="32" cy="68" r="22.5" fill="none" stroke="#F5E6B8" stroke-width=".8" opacity=".6"/>
+ <g stroke="#D4AF37" stroke-linecap="round">${[...Array(12)].map((_,i)=>{const a=i*Math.PI/6,r1=i%3?18.5:16.5;return `<path d="M${32+Math.sin(a)*r1} ${68-Math.cos(a)*r1}L${32+Math.sin(a)*20.5} ${68-Math.cos(a)*20.5}" stroke-width="${i%3?1:1.8}"/>`}).join("")}</g>
+ <path d="M32 68L31.6 53" stroke="#F5E6B8" stroke-width="2.2" stroke-linecap="round"/><path d="M32 68L29.8 50.5" stroke="#F5E6B8" stroke-width="1.3" stroke-linecap="round" transform="rotate(-6 32 68)"/>
+ <circle cx="32" cy="68" r="2.2" fill="#D4AF37"/><path d="M53 44l1.4 3.6 3.6 1.4-3.6 1.4L53 54l-1.4-3.6-3.6-1.4 3.6-1.4z" fill="#FFF6D6"/></svg>`;
+// photo placeholder: fireworks over a city skyline, two champagne glasses and the year
+function scene(){const Y=newYear();const fw=(cx,cy,r,n,c)=>{let s="";for(let i=0;i<n;i++){const a=i/n*Math.PI*2;s+=`<path d="M${cx+Math.cos(a)*r*.25} ${cy+Math.sin(a)*r*.25}L${cx+Math.cos(a)*r} ${cy+Math.sin(a)*r}" stroke="${c}" stroke-width="2" stroke-linecap="round" opacity=".9"/><circle cx="${cx+Math.cos(a)*r*1.08}" cy="${cy+Math.sin(a)*r*1.08}" r="2.2" fill="${c}"/>`}return s};
+  let win="";for(let i=0;i<46;i++){const x=(i*37)%390+5,y=330+((i*53)%120);win+=`<rect x="${x}" y="${y}" width="4" height="6" fill="#F5E6B8" opacity="${.35+(i%5)*.12}"/>`}
+  let conf="";for(let i=0;i<40;i++){const x=(i*83)%400,y=(i*47)%300+10;conf+=`<rect x="${x}" y="${y}" width="3" height="7" fill="${["#D4AF37","#F5E6B8","#fff"][i%3]}" opacity=".55" transform="rotate(${(i*37)%180} ${x} ${y})"/>`}
+  return `<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Gold fireworks over the city at midnight with two champagne glasses"><defs>
+   <linearGradient id="nsk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05050a"/><stop offset=".65" stop-color="#14121e"/><stop offset="1" stop-color="#2a2312"/></linearGradient>
+   <linearGradient id="ngl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".5" stop-color="#D4AF37"/><stop offset="1" stop-color="#8a6a18"/></linearGradient>
+   <linearGradient id="nch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5E6B8" stop-opacity=".95"/><stop offset="1" stop-color="#D4AF37" stop-opacity=".9"/></linearGradient>
+   <radialGradient id="nglow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#D4AF37" stop-opacity=".35"/><stop offset="1" stop-color="#D4AF37" stop-opacity="0"/></radialGradient></defs>
+   <rect width="400" height="500" fill="url(#nsk)"/>${conf}
+   <circle cx="110" cy="110" r="90" fill="url(#nglow)"/><circle cx="300" cy="160" r="80" fill="url(#nglow)"/>
+   ${fw(110,110,62,18,"#D4AF37")}${fw(300,160,52,16,"#F5E6B8")}${fw(240,70,30,12,"#fff")}${fw(60,230,26,10,"#E9CF7A")}
+   <text x="200" y="300" text-anchor="middle" font-family="Cinzel,Georgia,serif" font-weight="700" font-size="92" fill="url(#ngl)" opacity=".95">${Y}</text>
+   <path d="M0 360h30v-40h22v-30h26v50h18v-70h30v80h20v-46h28v66h16v-90h34v78h20v-40h30v60h18v-52h26v44h22v-60h30v70h30v150H0z" fill="#07070b"/>${win}
+   <g transform="translate(150 330) rotate(-12)"><path d="M0 0h40l-3 52a17 17 0 0 1-34 0z" fill="url(#nch)" stroke="#F5E6B8" stroke-width="1.5"/><path d="M20 70v58M4 130h32" stroke="url(#ngl)" stroke-width="3" stroke-linecap="round"/>${[[12,40],[22,26],[28,48],[16,16]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2" fill="#fff" opacity=".8"/>`).join("")}</g>
+   <g transform="translate(212 322) rotate(12)"><path d="M0 0h40l-3 52a17 17 0 0 1-34 0z" fill="url(#nch)" stroke="#F5E6B8" stroke-width="1.5"/><path d="M20 70v58M4 130h32" stroke="url(#ngl)" stroke-width="3" stroke-linecap="round"/>${[[14,36],[26,22],[20,50]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="2" fill="#fff" opacity=".8"/>`).join("")}</g>
+   <path d="M200 300l2.4 7.6 7.6 2.4-7.6 2.4-2.4 7.6-2.4-7.6-7.6-2.4 7.6-2.4z" fill="#FFF6D6"/></svg>`}
+const divider=()=>`<div class="divider rv" aria-hidden="true">${A.divStar}</div>`;
+
+/* ───────── sections ───────── */
+function hero(){
+  const g=guest(),ti=title(),s=startDT();
+  const photo=on("photo")?`<div class="frame"><div class="frame-in">${C.photo?`<img src="${esc(C.photo)}" alt="${esc(C.photoAlt||C.hosts||"Your hosts")}">`:scene()}</div><div class="sprig">${A.star8}</div></div>`:"";
+  const tHTML=esc(ti).replace(/(\d{4})\s*$/,'<span class="yr">$1</span>');
+  return `<section id="hero" class="rv">
+    <button class="ornament" id="ornament" type="button" aria-label="Tap for a little New Year sparkle">${CLOCK}</button>
+    ${g?`<p class="dear">${esc(C.greeting||"Dear")} ${esc(g)},</p>`:""}
+    <h1 class="title${ti.replace(/\d{4}\s*$/,"").length>22?" long":""}">${tHTML}</h1>
+    <p class="intro">${esc(intro())}</p>
+    ${C.hosts?`<p class="label" style="margin-top:1.1em">${esc(C.hostsLabel||"Hosted by")}</p><p class="hosts">${esc(C.hosts)}</p>`:""}
+    ${C.hostsNames?`<p class="hosts-sub">${esc(C.hostsNames)}</p>`:""}
+    ${photo}
+    ${s?`<div><p class="date-line"><span>${esc(fmt(s,{weekday:"short"}))}</span><i></i><span>${esc(fmt(s,{month:"short",day:"numeric"}))}</span><i></i><span>${esc(C.startTime?timeOf(s):String(s.getFullYear()))}</span></p></div>`:""}
+  </section>`;
+}
+function countdown(){
+  if(!on("countdown")||!startDT())return"";
+  return `<section id="countdown" class="rv"><p class="label" id="count-label">${esc(ev().until)}</p><div id="count-body" aria-live="off"></div></section>`;
+}
+function details(){
+  if(!on("details"))return"";
+  const d=C.dressCode||{},rows=[];
+  if(startDT())rows.push(`<div class="detail"><div class="ico">${A.cal}</div><div><p class="label">When</p><strong>${esc(longDate())}</strong>${timeRange()?`<p>${esc(timeRange())}</p>`:""}</div></div>`);
+  if(C.venue||C.address)rows.push(`<div class="detail"><div class="ico">${A.pin}</div><div><p class="label">Where</p><strong>${esc(C.venue||C.address)}</strong>${C.venue&&C.address?`<p>${nl(C.address)}</p>`:""}</div></div>`);
+  if(on("dressCode")&&(d.text||d.badge||(d.palette||[]).length)){
+    const dots=(d.palette||[]).filter(x=>/^#[0-9a-f]{3,8}$/i.test(x));
+    rows.push(`<div class="detail"><div class="ico">${A.shirt}</div><div><p class="label">Dress code</p>${d.text?`<strong>${esc(d.text)}</strong>`:""}${d.note?`<p>${esc(d.note)}</p>`:""}
+      ${dots.length?`<div class="dots" role="img" aria-label="Suggested colours">${dots.map(x=>`<i style="background:${x}"></i>`).join("")}</div>`:""}
+      ${d.badge?`<span class="badge">${esc(d.badge)}</span>`:""}</div></div>`);
+  }
+  if(!rows.length)return"";
+  return `<section id="details" class="rv"><p class="label">The details</p><h2 class="sec">Save the Date</h2><div class="details">${rows.join("")}</div></section>`;
+}
+function schedule(){
+  const L=(C.schedule||[]).filter(x=>x&&(x.time||x.title));
+  if(!on("schedule")||!L.length)return"";
+  return `<section id="schedule" class="rv"><p class="label">The evening</p><h2 class="sec">What's Planned</h2><ol class="timeline">${L.map(x=>`<li${/^(12:00\s*AM|0?0:00|midnight)/i.test(x.time||"")?' class="mid"':""}><time>${esc(x.time)}</time><i></i><div><strong>${esc(x.title)}</strong>${x.note?`<span>${esc(x.note)}</span>`:""}</div></li>`).join("")}</ol></section>`;
+}
+function menu(){
+  const L=(C.menu||[]).filter(x=>x&&(x.course||x.dishes));
+  if(!on("menu")||!L.length)return"";
+  return `<section id="menu" class="rv"><p class="label">Food &amp; drinks</p><h2 class="sec">Bites &amp; Bubbles</h2><div class="menu">${L.map(x=>`<h3>${esc(x.course)}</h3>${String(x.dishes||"").split("\n").filter(Boolean).map(l=>`<p>${esc(l)}</p>`).join("")}`).join("")}</div></section>`;
+}
+function midnight(){
+  const g=C.midnight||{};
+  if(!on("midnight")||!(g.title||g.intro||(g.notes||[]).length))return"";
+  const notes=(g.notes||[]).filter(Boolean);
+  return `<section id="midnight" class="rv"><p class="label">At midnight</p><h2 class="sec">${esc(g.title||"The Midnight Toast")}</h2><div class="gift" style="margin-top:36px"><div class="gift-ico">${A.glasses}</div>
+    ${g.intro?`<p>${esc(g.intro)}</p>`:""}
+    <div class="chips">${g.chip1?`<span class="chip">${esc(g.chip1Label||"")} <b>${esc(g.chip1)}</b></span>`:""}${g.chip2?`<span class="chip">${esc(g.chip2Label||"")} <b>${esc(g.chip2)}</b></span>`:""}</div>
+    ${notes.length?`<ul class="rules">${notes.map(r=>`<li>${esc(r)}</li>`).join("")}</ul>`:""}</div></section>`;
+}
+function buttons(){
+  const dir=on("directions")&&(C.address||C.mapsLink||C.venue),cal=on("calendar")&&startDT();
+  if(!dir&&!cal)return"";
+  return `<section id="buttons" class="rv"><div class="btns">
+    ${dir?`<a class="btn" id="btn-dir" href="${esc(mapsUrl())}" target="_blank" rel="noopener">${A.nav}Get directions</a>`:""}
+    ${cal?`<button class="btn ghost" id="btn-cal" type="button" aria-expanded="false" aria-controls="cal-menu">${A.cal}Add to calendar</button>
+    <div class="cal-menu" id="cal-menu" hidden><button class="btn ghost" id="btn-ics" type="button">Apple / Outlook</button><a class="btn ghost" id="btn-gcal" href="${esc(gcalUrl())}" target="_blank" rel="noopener">Google Calendar</a></div>`:""}
+  </div></section>`;
+}
+function rsvp(){
+  if(!on("rsvp"))return"";
+  const r=C.rsvp||{},g=urlGuest(),max=Math.max(1,Math.min(20,parseInt(r.maxGuests,10)||6)),label=esc(r.buttonText||"RSVP Now");
+  const note=r.deadline?`<p class="rsvp-note">Kindly reply by ${esc(r.deadline)}</p>`:"";
+  let body;
+  if(r.method==="link"){
+    body=`${note}<div id="rsvp-form"><p style="text-align:center">Tap below to let us know if you can make it.</p><button class="btn gold" id="rsvp-link" type="button">${A.send}${label}</button></div>`;
+  }else{
+    body=`${note}<form id="rsvp-form" novalidate>
+      <div class="fld"><label for="r-name">Your name</label><input id="r-name" type="text" autocomplete="name" value="${esc(g)}" maxlength="80"></div>
+      <fieldset class="fld"><legend>Will you join us?</legend><div class="choices">
+        <label class="choice"><input type="radio" name="attend" value="yes"><span><em aria-hidden="true">🥂</em>Count me in!</span></label>
+        <label class="choice"><input type="radio" name="attend" value="no"><span><em aria-hidden="true">💌</em>Sadly can't make it</span></label></div></fieldset>
+      <div id="r-extra">
+      <div class="fld"><label id="r-n-label">Number of guests</label><div class="stepper" role="group" aria-labelledby="r-n-label"><button type="button" data-step="-1" aria-label="One guest fewer">−</button><output id="r-n" data-max="${max}" aria-live="polite">1</output><button type="button" data-step="1" aria-label="One guest more">+</button></div></div>
+      <div class="fld"><label for="r-diet">Dietary notes <span style="text-transform:none;letter-spacing:0;opacity:.75">(optional)</span></label><input id="r-diet" type="text" maxlength="200" placeholder="Vegetarian, allergies…"></div>
+      </div>
+      <div class="fld"><label for="r-msg">Message to the hosts <span style="text-transform:none;letter-spacing:0;opacity:.75">(optional)</span></label><textarea id="r-msg" maxlength="500" placeholder="A wish for 2027…"></textarea></div>
+      <p class="rsvp-err" id="r-err" role="alert"></p>
+      <button class="btn gold" type="submit">${A.send}${label}</button>
+      <p class="rsvp-how">Your reply opens ${r.method==="email"?"in your email app":"in WhatsApp"}, ready to send.</p>
+    </form>`;
+  }
+  return `<section id="rsvp" class="rv"><p class="label">RSVP</p><h2 class="sec">Will You Join Us?</h2><div class="rsvp">${body}<div id="rsvp-done" class="rsvp-done" role="status" hidden></div></div></section>`;
+}
+function footer(){
+  const c=C.closing||{};
+  if(!on("footer")||!(c.message||c.signature))return"";
+  return `<section id="footer" class="rv">${c.message?`<p class="closing">${nl(c.message)}</p>`:""}${c.signature?`<p class="sign">${esc(c.signature)}</p>`:""}<div class="foot-art">${A.divStar}</div></section>`;
+}
+
+/* ───────── links ───────── */
+function mapsUrl(){return C.mapsLink||("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent([C.venue,C.address].filter(Boolean).join(", ")))}
+function calText(){return{title:title()+(C.hosts?" · "+C.hosts:""),where:[C.venue,C.address].filter(Boolean).join(", "),
+  desc:[(C.dressCode&&C.dressCode.text&&on("dressCode"))?"Dress code: "+C.dressCode.text:"",location.protocol.startsWith("http")?"Invitation: "+location.origin+location.pathname:""].filter(Boolean).join("\n")}}
+function gcalUrl(){const s=startDT(),e=endDT(),t=calText();if(!s)return"#";
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(t.title)+"&dates="+stamp(s)+"/"+stamp(e)+"&location="+encodeURIComponent(t.where)+"&details="+encodeURIComponent(t.desc)}
+function icsText(){const s=startDT(),e=endDT(),t=calText(),x=v=>String(v).replace(/\\/g,"\\\\").replace(/\n/g,"\\n").replace(/([,;])/g,"\\$1"),n=new Date();
+  return ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//New Year Invitation//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH","BEGIN:VEVENT",
+    "UID:"+stamp(s)+"-"+Math.random().toString(36).slice(2,10)+"@invitation",
+    "DTSTAMP:"+n.getUTCFullYear()+p2(n.getUTCMonth()+1)+p2(n.getUTCDate())+"T"+p2(n.getUTCHours())+p2(n.getUTCMinutes())+p2(n.getUTCSeconds())+"Z",
+    "DTSTART:"+stamp(s),"DTEND:"+stamp(e),"SUMMARY:"+x(t.title),"LOCATION:"+x(t.where),"DESCRIPTION:"+x(t.desc),
+    "BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:"+x(t.title)+" is tomorrow","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n")}
+function downloadIcs(){const b=new Blob([icsText()],{type:"text/calendar;charset=utf-8"}),u=URL.createObjectURL(b),a=document.createElement("a");
+  a.href=u;a.download=title().replace(/[^\w]+/g,"-").replace(/^-|-$/g,"").toLowerCase()+".ics";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+function openUrl(u){window.__inviteLastUrl=u;if(PREVIEW)return;
+  if(/^(mailto|sms|tel):/.test(u)){location.href=u;return}
+  const w=window.open(u,"_blank","noopener");if(!w)location.href=u}
+
+/* ───────── RSVP ───────── */
+function sendRsvp(){
+  const r=C.rsvp||{},name=$("#r-name").value.trim(),att=($("input[name=attend]:checked")||{}).value,err=$("#r-err");
+  if(!name){err.textContent="Please add your name so we know who's replying.";$("#r-name").focus();return}
+  if(!att){err.textContent="Please choose if you can join us.";$("input[name=attend]").focus();return}
+  err.textContent="";
+  const yes=att==="yes",n=$("#r-n").textContent,diet=$("#r-diet").value.trim(),msg=$("#r-msg").value.trim(),s=startDT();
+  const lines=["🥂 RSVP: "+title()+(s?" ("+fmt(s,{month:"short",day:"numeric"})+")":""),"","Name: "+name,"Attending: "+(yes?"Yes, count me in! 🎉":"Sorry, can't make it")];
+  if(yes){lines.push("Guests: "+n);if(diet)lines.push("Dietary notes: "+diet)}
+  if(msg)lines.push("Message: "+msg);
+  const text=lines.join("\n");
+  if(r.method==="email")openUrl("mailto:"+encodeURIComponent(r.email||"").replace(/%40/g,"@")+"?subject="+encodeURIComponent("RSVP: "+title()+" · "+name)+"&body="+encodeURIComponent(text));
+  else openUrl("https://wa.me/"+String(r.whatsapp||"").replace(/\D/g,"")+"?text="+encodeURIComponent(text));
+  rsvpDone(yes?"yes":"no",name.split(" ")[0],r.method==="email"?"Your email app should now be open. Just press send.":"WhatsApp should now be open. Just press send.");
+}
+function rsvpDone(kind,name,how){
+  const f=$("#rsvp-form"),d=$("#rsvp-done");if(!d)return;
+  const head=kind==="yes"?"Cheers"+(name?", "+name:"")+"!":kind==="no"?"We'll miss you"+(name?", "+name:"")+"!":"Thank you!";
+  const sub=kind==="yes"?"We can't wait to ring in "+newYear()+" with you.":kind==="no"?"Thank you for letting us know. Happy New Year!":"Your RSVP form has opened in a new tab.";
+  d.innerHTML=`<svg viewBox="0 0 86 86" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="43" cy="43" r="38"/><path d="M27 44l11 11 21-23"/></svg><h3>${esc(head)}</h3><p>${esc(sub)}</p>${how?`<p style="color:var(--ink-soft);font-size:.92em">${esc(how)}</p>`:""}<button class="linkbtn" id="rsvp-again" type="button">Change my reply</button>`;
+  f.hidden=true;d.hidden=false;
+  const b=d.getBoundingClientRect();
+  if(kind!=="no")confetti(b.left+b.width/2,b.top+50);else burst(b.left+b.width/2,b.top+50,12);
+}
+
+/* ───────── sparkles, confetti & fireworks ───────── */
+const fx=$("#fx");
+const GOLDS=["#D4AF37","#F5E6B8","#FFF6D6","#E9CF7A","#FFFFFF"];
+function burst(x,y,n){
+  if(reduced)n=Math.min(n||0,6);const cols=GOLDS;
+  for(let i=0;i<(n||22);i++){const el=document.createElement("i"),a=Math.random()*Math.PI*2,d=40+Math.random()*95,sz=.5+Math.random()*1.1;
+    el.className="spark"+(i%4===0?" dot":"");el.style.cssText=`left:${x}px;top:${y}px;background:${cols[i%cols.length]}`;fx.appendChild(el);
+    if(!el.animate){setTimeout(()=>el.remove(),600);continue}
+    el.animate([{transform:"translate(-50%,-50%) scale(.2)",opacity:1},{transform:`translate(calc(-50% + ${Math.cos(a)*d}px),calc(-50% + ${Math.sin(a)*d+18}px)) scale(${sz}) rotate(${Math.random()*180}deg)`,opacity:0}],
+      {duration:700+Math.random()*700,easing:"cubic-bezier(.15,.7,.3,1)",fill:"forwards"}).onfinish=()=>el.remove()}
+}
+function confetti(x,y){
+  burst(x,y,16);if(reduced)return;const cols=GOLDS;
+  for(let i=0;i<34;i++){const el=document.createElement("i"),dx=(Math.random()-.5)*300,up=80+Math.random()*130,r=Math.random()*720-360;
+    el.className="spark conf";el.style.cssText=`left:${x}px;top:${y}px;background:${cols[i%cols.length]}`;fx.appendChild(el);
+    if(!el.animate){el.remove();continue}
+    el.animate([{transform:"translate(-50%,-50%)",opacity:1},{transform:`translate(calc(-50% + ${dx*.6}px),calc(-50% - ${up}px)) rotate(${r/2}deg)`,opacity:1,offset:.35,easing:"ease-in"},{transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${150+Math.random()*160}px)) rotate(${r}deg)`,opacity:0}],
+      {duration:1500+Math.random()*900,easing:"cubic-bezier(.2,.8,.4,1)",fill:"forwards"}).onfinish=()=>el.remove()}
+}
+// one firework: a glowing ring of gold sparks that falls with gravity
+function firework(x,y,n){
+  const cols=GOLDS;n=n||30;
+  for(let i=0;i<n;i++){const el=document.createElement("i"),a=i/n*Math.PI*2+Math.random()*.2,d=70+Math.random()*80,c=cols[i%cols.length];
+    el.className="spark fw";el.style.cssText=`left:${x}px;top:${y}px;background:${c};color:${c}`;fx.appendChild(el);
+    if(!el.animate){el.remove();continue}
+    const ex=Math.cos(a)*d,ey=Math.sin(a)*d;
+    el.animate([{transform:"translate(-50%,-50%) scale(.4)",opacity:1},{transform:`translate(calc(-50% + ${ex}px),calc(-50% + ${ey}px)) scale(1)`,opacity:1,offset:.45,easing:"ease-in"},{transform:`translate(calc(-50% + ${ex*1.15}px),calc(-50% + ${ey*1.15+70}px)) scale(.5)`,opacity:0}],
+      {duration:1300+Math.random()*500,easing:"cubic-bezier(.1,.8,.3,1)",fill:"forwards"}).onfinish=()=>el.remove()}
+}
+function fireworksShow(){
+  const W=innerWidth,H=innerHeight,spots=[[.5,.36],[.24,.26],[.76,.28],[.32,.52],[.7,.5],[.5,.18]];
+  spots.forEach(([fx_,fy],i)=>setTimeout(()=>{firework(W*fx_+(Math.random()-.5)*30,H*fy+(Math.random()-.5)*30,W<500?24:34);try{if((C.sounds||{}).chime!==false)pop()}catch(e){}},i*170));
+  setTimeout(()=>confetti(W/2,H*.3),400);
+}
+
+/* ───────── sound (all synthesised, no audio files) ───────── */
+let AC=null,musicOn=false,musicTimer=null,mp3=null,master=null;
+function ac(){if(!AC){const K=window.AudioContext||window.webkitAudioContext;if(!K)return null;AC=new K()}if(AC.state==="suspended")AC.resume();return AC}
+function paperSound(){const c=ac();if(!c)return;const len=c.sampleRate*.5,buf=c.createBuffer(1,len,c.sampleRate),d=buf.getChannelData(0);
+  for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*(.35+.65*Math.random());
+  [[0,.26,1800,.11],[.3,.42,2600,.09]].forEach(([at,dur,f,v])=>{const s=c.createBufferSource(),bp=c.createBiquadFilter(),g=c.createGain(),t=c.currentTime+at;
+    s.buffer=buf;bp.type="bandpass";bp.Q.value=.8;bp.frequency.setValueAtTime(f*.6,t);bp.frequency.exponentialRampToValueAtTime(f*1.7,t+dur);
+    g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v,t+dur*.3);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    s.connect(bp);bp.connect(g);g.connect(c.destination);s.start(t);s.stop(t+dur+.05)})}
+function bell(c,f,t,v,dur,dest){[[1,1],[2.01,.35],[3.02,.12]].forEach(([m,a])=>{const o=c.createOscillator(),g=c.createGain();o.type="sine";o.frequency.value=f*m;
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(v*a,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur/m);o.connect(g);g.connect(dest||c.destination);o.start(t);o.stop(t+dur/m+.05)})}
+function chime(){const c=ac();if(!c)return;[1318.5,1568,2093,2637].forEach((f,i)=>bell(c,f,c.currentTime+i*.11,.07,1.6))}
+function tickSound(hi){const c=ac();if(!c)return;bell(c,hi?1760:1046.5,c.currentTime,.09,.9)}
+function pop(){const c=ac();if(!c)return;const len=c.sampleRate*.35,buf=c.createBuffer(1,len,c.sampleRate),d=buf.getChannelData(0);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3);
+  const s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=buf;f.type="lowpass";f.frequency.value=900+Math.random()*900;g.gain.value=.22;s.connect(f);f.connect(g);g.connect(c.destination);s.start()}
+const N={C4:60,D4:62,E4:64,F4:65,"F#4":66,G4:67,A4:69,"Bb4":70,B4:71,C5:72,D5:74,E5:76,F5:77,G5:79};
+const TUNES={
+  // Auld Lang Syne (traditional, public domain)
+  "auld-lang-syne":{bpm:92,n:"C4 1,F4 1.5,F4 .5,F4 1,A4 1,G4 1.5,F4 .5,G4 1,A4 1,F4 1.5,F4 .5,A4 1,C5 1,D5 3,D5 1,C5 1.5,A4 .5,A4 1,F4 1,G4 1.5,F4 .5,G4 1,A4 1,F4 1.5,D4 .5,D4 1,C4 1,F4 3,D5 1,C5 1.5,A4 .5,A4 1,F4 1,G4 1.5,F4 .5,G4 1,D5 1,C5 1.5,A4 .5,A4 1,C5 1,D5 3,F5 1,C5 1.5,A4 .5,A4 1,F4 1,G4 1.5,F4 .5,G4 1,A4 1,F4 1.5,D4 .5,D4 1,C4 1,F4 3,R 2"}
+};
+function startBox(){const c=ac();if(!c)return false;const tune=TUNES[(C.music||{}).track]||TUNES["auld-lang-syne"];
+  const notes=tune.n.split(",").map(s=>{const[a,b]=s.trim().split(" ");return[a,parseFloat(b)]}),beat=60/tune.bpm;
+  master=c.createGain();master.gain.value=.9;master.connect(c.destination);let i=0,t=c.currentTime+.15;
+  const tick=()=>{while(t<c.currentTime+.6){const[nm,b]=notes[i];if(nm!=="R"){const f=440*Math.pow(2,(N[nm]+12-69)/12);bell(c,f,t,.085,Math.max(1.1,b*beat*1.6),master);if(b>=1)bell(c,f/2,t,.03,1.4,master)}
+    t+=b*beat;i=(i+1)%notes.length}};
+  tick();musicTimer=setInterval(tick,200);return true}
+function setMusic(v){const b=$("#music"),m=C.music||{};
+  // If CONFIG.music.source is "mp3" and mp3Url is set, your own New Year track plays instead of the music box.
+  if(v){let ok=false;if(m.source==="mp3"&&m.mp3Url){if(!mp3){mp3=new Audio(m.mp3Url);mp3.loop=true;mp3.volume=.5}mp3.play().catch(()=>setMusic(false));ok=true}else ok=startBox();if(!ok)return}
+  else{if(mp3)mp3.pause();clearInterval(musicTimer);if(master){try{master.gain.setTargetAtTime(0,AC.currentTime,.15)}catch(e){}master=null}}
+  musicOn=v;b.setAttribute("aria-pressed",String(v));b.setAttribute("aria-label",v?"Pause background music":"Play background music")}
+
+/* ───────── hanging gold stars (replaces the string lights) ───────── */
+function drawLights(){$$(".lights").forEach(h=>{const w=Math.max(320,h.clientWidth||innerWidth),seg=w<600?w/3:w/Math.round(w/210),n=Math.round(w/seg),H=w<700?84:96,dip=H*.28;
+  const star=(x,y,r,c)=>`<path class="${c}" d="M${x} ${y-r}L${x+r*.28} ${y-r*.28}L${x+r} ${y}L${x+r*.28} ${y+r*.28}L${x} ${y+r}L${x-r*.28} ${y+r*.28}L${x-r} ${y}L${x-r*.28} ${y-r*.28}Z"/>`;
+  let p="M0 4",b="",k=0;for(let i=0;i<n;i++){const x0=i*seg;p+=` Q${x0+seg/2} ${4+dip*2} ${x0+seg} 4`;
+    for(let j=1;j<=3;j++){const t=j/4,x=x0+seg*t,y=4+2*t*(1-t)*dip*2,len=16+((k*13)%5)*7,r=k%3===1?9:6;k++;
+      b+=`<g class="bulb"><path class="str" d="M${x} ${y}V${y+len}"/><circle class="glow c${k%4+1}" cx="${x}" cy="${y+len+r}" r="${r*2}"/>${star(x,y+len+r,r,"c"+(k%4+1))}</g>`}}
+  h.innerHTML=`<svg viewBox="0 0 ${w} ${H}" preserveAspectRatio="none"><path class="wire" d="${p}"/>${b}</svg>`})}
+
+/* ───────── slowly falling gold confetti & glitter (canvas, capped) ───────── */
+const snow=(()=>{const cv=$("#snow"),cx=cv.getContext("2d");let W=0,H=0,fl=[],raf=0,last=0,dpr=1;
+  const COLS=["#D4AF37","#F5E6B8","#E9CF7A","#B08A26","#FFF6D6"];
+  function size(){dpr=Math.min(window.devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+    const n=Math.min(60,Math.round(W*H/18000));while(fl.length<n)fl.push(mk(true));fl.length=n}
+  function mk(any){const g=Math.random()<.4;return{x:Math.random()*W,y:any?Math.random()*H:-10,g:g,w:g?1+Math.random()*1.4:3+Math.random()*3,h:g?0:6+Math.random()*5,
+    v:g?10+Math.random()*12:16+Math.random()*20,p:Math.random()*6.28,s:.4+Math.random()*.8,r:Math.random()*6.28,vr:(Math.random()-.5)*2.4,f:Math.random()*6.28,c:COLS[Math.floor(Math.random()*COLS.length)],a:.45+Math.random()*.45}}
+  function frame(t){raf=requestAnimationFrame(frame);const dt=Math.min(.05,(t-last)/1000||0);last=t;cx.clearRect(0,0,W,H);
+    for(let i=0;i<fl.length;i++){const f=fl[i];f.y+=f.v*dt;f.p+=f.s*dt;f.x+=Math.sin(f.p)*12*dt;f.r+=f.vr*dt;f.f+=dt*4;if(f.y>H+10)fl[i]=mk(false);
+      cx.fillStyle=f.c;
+      if(f.g){cx.globalAlpha=f.a*(.45+.55*Math.abs(Math.sin(f.f)));cx.beginPath();cx.arc(f.x,f.y,f.w,0,6.283);cx.fill()}
+      else{cx.globalAlpha=f.a;cx.save();cx.translate(f.x,f.y);cx.rotate(f.r);cx.scale(1,Math.cos(f.f));cx.fillRect(-f.w/2,-f.h/2,f.w,f.h);cx.restore()}}
+    cx.globalAlpha=1}
+  function start(){if(reduced||raf)return;last=performance.now();raf=requestAnimationFrame(frame)}
+  function stop(){cancelAnimationFrame(raf);raf=0}
+  document.addEventListener("visibilitychange",()=>document.hidden?stop():start());
+  return{size,start}})();
+
+/* ───────── countdown ───────── */
+function tick(){
+  const body=$("#count-body");if(!body)return;const s=startDT(),now=new Date(),lab=$("#count-label");
+  const sameDay=now.getFullYear()===s.getFullYear()&&now.getMonth()===s.getMonth()&&now.getDate()===s.getDate();
+  const dayEnd=new Date(s.getFullYear(),s.getMonth(),s.getDate()+1);
+  let state=sameDay?"today":now>=dayEnd?"after":"before";
+  if(body.dataset.state!==state){body.dataset.state=state;lab.hidden=state!=="before";
+    body.innerHTML=state==="before"?`<div class="count" role="timer" aria-label="Countdown to the party">${["Days","Hours","Minutes","Seconds"].map((l,i)=>`<div><b id="cd${i}">0</b><span>${i===2?"Mins":i===3?"Secs":l}</span></div>`).join("")}</div>`
+      :`<p class="count-msg">${esc(state==="today"?ev().today:"Thank you for celebrating with us")}</p>${state==="today"&&C.startTime&&now<s?`<p>Doors open at ${esc(timeOf(s))}</p>`:""}`}
+  if(state==="before"){let d=Math.max(0,Math.floor((s-now)/1000));const v=[Math.floor(d/86400),Math.floor(d%86400/3600),Math.floor(d%3600/60),d%60];
+    v.forEach((x,i)=>{const e=$("#cd"+i);if(e)e.textContent=i?p2(x):x})}
+}
+
+/* ───────── meta tags (kept in sync with CONFIG) ───────── */
+function meta(){
+  const sh=C.share||{},t=sh.title||(title()+(C.hosts?" · "+C.hosts:"")),s=startDT();
+  const d=sh.description||(intro()+"!"+(s?" "+longDate()+(C.startTime?" at "+timeOf(s):"")+".":"")+" Tap to open your invitation.");
+  document.title=t;const set=(sel,v)=>{const m=$(sel);if(m&&v)m.setAttribute("content",v)};
+  set('meta[name="description"]',d);set('meta[property="og:title"]',t);set('meta[property="og:description"]',d);set('meta[name="twitter:title"]',t);set('meta[name="twitter:description"]',d);
+  set('meta[name="theme-color"]',getComputedStyle(document.documentElement).getPropertyValue("--bg").trim());
+}
+
+/* ───────── render ───────── */
+let io=null;
+function render(){
+  const t=theme(),g=guest();document.documentElement.dataset.theme=t;
+  // envelope
+  $("#env-from").innerHTML=C.hosts?`An invitation from<b class="foil">${esc(C.hosts)}</b>`:"";
+  $("#env-dear").textContent=g?(C.greeting||"Dear"):"A special invitation";
+  const nm=$("#env-name");nm.textContent=g||"You're Invited";nm.classList.toggle("long",(g||"").length>20);
+  $("#env-letter-small").textContent="You're invited";$("#env-letter-title").textContent=title();
+  const emb=`<b>${A.sealStar}${newYear()}</b>`;
+  $("#seal").innerHTML=`<div class="seal-half l"><div class="wax">${emb}</div></div><div class="seal-half r"><div class="wax">${emb}</div></div>`;
+  // card
+  const parts=[hero(),countdown(),details(),schedule(),menu(),midnight(),buttons(),rsvp(),footer()].filter(Boolean);
+  $("#card").innerHTML=["tl","tr","bl","br"].map(c=>`<div class="corner ${c}">${A.corner}</div>`).join("")+parts.join(divider());
+  $("#music").hidden=!(C.music&&C.music.enabled);
+  meta();tick();drawLights();observe();
+}
+function observe(){
+  const els=$$(".rv");if(reduced||PREVIEW||!("IntersectionObserver"in window)){els.forEach(e=>e.classList.add("on"));return}
+  if(io)io.disconnect();io=new IntersectionObserver(en=>en.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{rootMargin:"0px 0px -8% 0px",threshold:.05});
+  els.forEach(e=>io.observe(e));
+}
+
+/* ───────── envelope → 3·2·1 → fireworks → card ───────── */
+const scr=$("#envelope-screen"),page=$("#page"),cnt=$("#nye-count");
+function showCard(instant){
+  page.hidden=false;document.body.classList.remove("locked");
+  if(instant){scr.hidden=true;page.style.transition="none";page.classList.add("in");requestAnimationFrame(()=>page.style.transition="")}
+  else{scr.classList.add("done");requestAnimationFrame(()=>requestAnimationFrame(()=>page.classList.add("in")));setTimeout(()=>scr.hidden=true,900)}
+  drawLights();observe();
+}
+function countIn(done){
+  const sp=cnt.querySelector("span"),snd=(C.sounds||{}).chime!==false,steps=["3","2","1"];let i=0;
+  cnt.classList.add("on");
+  const next=()=>{
+    if(i<steps.length){sp.className="";sp.textContent=steps[i];void sp.offsetWidth;sp.className="go";try{if(snd)tickSound(false)}catch(e){}i++;setTimeout(next,620);return}
+    sp.className="msg";sp.textContent="Happy New Year!";void sp.offsetWidth;sp.className="msg go";try{if(snd)tickSound(true)}catch(e){}
+    fireworksShow();
+    setTimeout(()=>{cnt.classList.remove("on");done()},1050);
+  };
+  next();
+}
+let opening=false;
+function openEnvelope(){
+  if(opening)return;opening=true;const s=C.sounds||{};
+  try{if(s.paper!==false)paperSound();if(s.chime!==false)setTimeout(chime,1050)}catch(e){}
+  if(reduced){showCard(false);return}
+  const env=$("#env"),sr=$("#seal").getBoundingClientRect();
+  scr.classList.add("opening");env.classList.add("open");burst(sr.left+sr.width/2,sr.top+sr.height/2,14);
+  setTimeout(()=>env.classList.add("away"),1850);
+  if(C.introCountdown===false){setTimeout(()=>showCard(false),2000);return}
+  setTimeout(()=>countIn(()=>showCard(false)),1900);
+}
+
+/* ───────── events ───────── */
+$("#env-btn").addEventListener("click",openEnvelope);
+$("#music").addEventListener("click",()=>setMusic(!musicOn));
+$("#card").addEventListener("click",e=>{
+  const t=e.target.closest("button,a");if(!t)return;
+  if(t.id==="ornament"){const r=t.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height*.65,26);t.classList.remove("pop");void t.offsetWidth;t.classList.add("pop");try{if((C.sounds||{}).chime!==false)chime()}catch(x){}}
+  else if(t.id==="btn-cal"){const m=$("#cal-menu"),o=m.hidden;m.hidden=!o;t.setAttribute("aria-expanded",String(o))}
+  else if(t.id==="btn-ics")downloadIcs();
+  else if(t.id==="rsvp-link"){const l=(C.rsvp||{}).link;if(l)openUrl(l);rsvpDone("link","","")}
+  else if(t.id==="rsvp-again"){$("#rsvp-done").hidden=true;$("#rsvp-form").hidden=false}
+  else if(t.dataset.step){const o=$("#r-n"),v=Math.max(1,Math.min(+o.dataset.max,+o.textContent+ +t.dataset.step));o.textContent=v}
+});
+$("#card").addEventListener("change",e=>{if(e.target.name==="attend"){$("#r-extra").hidden=e.target.value==="no";$("#r-err").textContent=""}});
+$("#card").addEventListener("submit",e=>{e.preventDefault();if(e.target.id==="rsvp-form")sendRsvp()});
+let rz;addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{snow.size();drawLights()},150)});
+setInterval(tick,1000);
+
+// live preview hook used by editor.html
+if(PREVIEW)addEventListener("message",e=>{const m=e.data||{};
+  if(m.type==="invite:update"&&m.config){C=m.config;if(musicOn)setMusic(false);mp3=null;render()}
+  if(m.type==="invite:scroll"){const el=document.getElementById(m.id);if(el&&!page.hidden)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-12,behavior:reduced?"auto":"smooth"})}});
+
+/* ───────── go ───────── */
+if(PREVIEW)document.documentElement.classList.add("in-editor");
+render();snow.size();snow.start();
+if(params.get("preview")==="card"||(PREVIEW&&PREVIEW.mode==="card"))showCard(true);
+window.__invite={render,openEnvelope,icsText,config:()=>C};
+})();
+</script>
+</body>
+</html>
